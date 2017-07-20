@@ -1,0 +1,59 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.apache.org/axis2" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.apache.org/axis2">
+   <wsdl:documentation>ws-xacml</wsdl:documentation>
+   <wsdl:types/>
+   <wsdl:message name="XACMLAuthzDecisionQueryRequest"/>
+   <wsdl:message name="XACMLAuthzDecisionQueryResponse"/>
+   <wsdl:portType name="ws-xacmlPortType">
+      <wsdl:operation name="XACMLAuthzDecisionQuery">
+         <wsdl:input message="tns:XACMLAuthzDecisionQueryRequest" wsaw:Action="XACMLAuthzDecisionQuery"/>
+         <wsdl:output message="tns:XACMLAuthzDecisionQueryResponse" wsaw:Action="urn:XACMLAuthzDecisionQueryResponse"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="ws-xacmlSoap11Binding" type="tns:ws-xacmlPortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="XACMLAuthzDecisionQuery">
+         <soap:operation soapAction="" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="ws-xacmlSoap12Binding" type="tns:ws-xacmlPortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="XACMLAuthzDecisionQuery">
+         <soap12:operation soapAction="" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="ws-xacmlHttpBinding" type="tns:ws-xacmlPortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="XACMLAuthzDecisionQuery">
+         <http:operation location="XACMLAuthzDecisionQuery"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="ws-xacml">
+      <wsdl:port name="ws-xacmlHttpsSoap11Endpoint" binding="tns:ws-xacmlSoap11Binding">
+         <soap:address location="https://10.16.118.52:9443/services/ws-xacml.ws-xacmlHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="ws-xacmlHttpsSoap12Endpoint" binding="tns:ws-xacmlSoap12Binding">
+         <soap12:address location="https://10.16.118.52:9443/services/ws-xacml.ws-xacmlHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="ws-xacmlHttpsEndpoint" binding="tns:ws-xacmlHttpBinding">
+         <http:address location="https://10.16.118.52:9443/services/ws-xacml.ws-xacmlHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

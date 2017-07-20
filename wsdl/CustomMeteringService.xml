@@ -1,0 +1,337 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ax2899="http://exception.agent.usage.carbon.wso2.org/xsd" xmlns:ns="http://services.agent.usage.carbon.wso2.org" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://services.agent.usage.carbon.wso2.org">
+   <wsdl:documentation>CustomMeteringService</wsdl:documentation>
+   <wsdl:types>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exception.agent.usage.carbon.wso2.org/xsd">
+         <xs:complexType name="UsageException">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2900="http://exception.agent.usage.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.agent.usage.carbon.wso2.org">
+         <xs:import namespace="http://exception.agent.usage.carbon.wso2.org/xsd"/>
+         <xs:element name="CustomMeteringServiceUsageException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="UsageException" nillable="true" type="ax2899:UsageException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="retrieveUsage">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="duration" nillable="true" type="xs:string"/>
+                  <xs:element minOccurs="0" name="measurement" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="retrieveUsageResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="CustomMeteringServiceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="CustomMeteringServiceException" nillable="true" type="ns:Exception"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:complexType name="Exception">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:element name="persistUsage">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="duration" nillable="true" type="xs:string"/>
+                  <xs:element minOccurs="0" name="measurement" nillable="true" type="xs:string"/>
+                  <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getRecordedDurations">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="measurement" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getRecordedDurationsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="isUsageEntryExists">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="duration" nillable="true" type="xs:string"/>
+                  <xs:element minOccurs="0" name="measurement" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="isUsageEntryExistsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addUsage">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+                  <xs:element minOccurs="0" name="duration" nillable="true" type="xs:string"/>
+                  <xs:element minOccurs="0" name="measurement" nillable="true" type="xs:string"/>
+                  <xs:element minOccurs="0" name="value" type="xs:long"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addUsageResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:long"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="getRecordedDurationsRequest">
+      <wsdl:part name="parameters" element="ns:getRecordedDurations"/>
+   </wsdl:message>
+   <wsdl:message name="getRecordedDurationsResponse">
+      <wsdl:part name="parameters" element="ns:getRecordedDurationsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="CustomMeteringServiceException">
+      <wsdl:part name="parameters" element="ns:CustomMeteringServiceException"/>
+   </wsdl:message>
+   <wsdl:message name="isUsageEntryExistsRequest">
+      <wsdl:part name="parameters" element="ns:isUsageEntryExists"/>
+   </wsdl:message>
+   <wsdl:message name="isUsageEntryExistsResponse">
+      <wsdl:part name="parameters" element="ns:isUsageEntryExistsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="addUsageRequest">
+      <wsdl:part name="parameters" element="ns:addUsage"/>
+   </wsdl:message>
+   <wsdl:message name="addUsageResponse">
+      <wsdl:part name="parameters" element="ns:addUsageResponse"/>
+   </wsdl:message>
+   <wsdl:message name="retrieveUsageRequest">
+      <wsdl:part name="parameters" element="ns:retrieveUsage"/>
+   </wsdl:message>
+   <wsdl:message name="retrieveUsageResponse">
+      <wsdl:part name="parameters" element="ns:retrieveUsageResponse"/>
+   </wsdl:message>
+   <wsdl:message name="CustomMeteringServiceUsageException">
+      <wsdl:part name="parameters" element="ns:CustomMeteringServiceUsageException"/>
+   </wsdl:message>
+   <wsdl:message name="persistUsageRequest">
+      <wsdl:part name="parameters" element="ns:persistUsage"/>
+   </wsdl:message>
+   <wsdl:portType name="CustomMeteringServicePortType">
+      <wsdl:operation name="getRecordedDurations">
+         <wsdl:input message="ns:getRecordedDurationsRequest" wsaw:Action="urn:getRecordedDurations"/>
+         <wsdl:output message="ns:getRecordedDurationsResponse" wsaw:Action="urn:getRecordedDurationsResponse"/>
+         <wsdl:fault message="ns:CustomMeteringServiceException" name="CustomMeteringServiceException" wsaw:Action="urn:getRecordedDurationsCustomMeteringServiceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="isUsageEntryExists">
+         <wsdl:input message="ns:isUsageEntryExistsRequest" wsaw:Action="urn:isUsageEntryExists"/>
+         <wsdl:output message="ns:isUsageEntryExistsResponse" wsaw:Action="urn:isUsageEntryExistsResponse"/>
+         <wsdl:fault message="ns:CustomMeteringServiceException" name="CustomMeteringServiceException" wsaw:Action="urn:isUsageEntryExistsCustomMeteringServiceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="addUsage">
+         <wsdl:input message="ns:addUsageRequest" wsaw:Action="urn:addUsage"/>
+         <wsdl:output message="ns:addUsageResponse" wsaw:Action="urn:addUsageResponse"/>
+         <wsdl:fault message="ns:CustomMeteringServiceException" name="CustomMeteringServiceException" wsaw:Action="urn:addUsageCustomMeteringServiceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="retrieveUsage">
+         <wsdl:input message="ns:retrieveUsageRequest" wsaw:Action="urn:retrieveUsage"/>
+         <wsdl:output message="ns:retrieveUsageResponse" wsaw:Action="urn:retrieveUsageResponse"/>
+         <wsdl:fault message="ns:CustomMeteringServiceUsageException" name="CustomMeteringServiceUsageException" wsaw:Action="urn:retrieveUsageCustomMeteringServiceUsageException"/>
+      </wsdl:operation>
+      <wsdl:operation name="persistUsage">
+         <wsdl:input message="ns:persistUsageRequest" wsaw:Action="urn:persistUsage"/>
+         <wsdl:fault message="ns:CustomMeteringServiceException" name="CustomMeteringServiceException" wsaw:Action="urn:persistUsageCustomMeteringServiceException"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="CustomMeteringServiceSoap11Binding" type="ns:CustomMeteringServicePortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getRecordedDurations">
+         <soap:operation soapAction="urn:getRecordedDurations" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="CustomMeteringServiceException">
+            <soap:fault use="literal" name="CustomMeteringServiceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="isUsageEntryExists">
+         <soap:operation soapAction="urn:isUsageEntryExists" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="CustomMeteringServiceException">
+            <soap:fault use="literal" name="CustomMeteringServiceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addUsage">
+         <soap:operation soapAction="urn:addUsage" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="CustomMeteringServiceException">
+            <soap:fault use="literal" name="CustomMeteringServiceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="retrieveUsage">
+         <soap:operation soapAction="urn:retrieveUsage" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="CustomMeteringServiceUsageException">
+            <soap:fault use="literal" name="CustomMeteringServiceUsageException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="persistUsage">
+         <soap:operation soapAction="urn:persistUsage" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:fault name="CustomMeteringServiceException">
+            <soap:fault use="literal" name="CustomMeteringServiceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="CustomMeteringServiceSoap12Binding" type="ns:CustomMeteringServicePortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getRecordedDurations">
+         <soap12:operation soapAction="urn:getRecordedDurations" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="CustomMeteringServiceException">
+            <soap12:fault use="literal" name="CustomMeteringServiceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="isUsageEntryExists">
+         <soap12:operation soapAction="urn:isUsageEntryExists" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="CustomMeteringServiceException">
+            <soap12:fault use="literal" name="CustomMeteringServiceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addUsage">
+         <soap12:operation soapAction="urn:addUsage" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="CustomMeteringServiceException">
+            <soap12:fault use="literal" name="CustomMeteringServiceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="retrieveUsage">
+         <soap12:operation soapAction="urn:retrieveUsage" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="CustomMeteringServiceUsageException">
+            <soap12:fault use="literal" name="CustomMeteringServiceUsageException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="persistUsage">
+         <soap12:operation soapAction="urn:persistUsage" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:fault name="CustomMeteringServiceException">
+            <soap12:fault use="literal" name="CustomMeteringServiceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="CustomMeteringServiceHttpBinding" type="ns:CustomMeteringServicePortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="getRecordedDurations">
+         <http:operation location="getRecordedDurations"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="isUsageEntryExists">
+         <http:operation location="isUsageEntryExists"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="addUsage">
+         <http:operation location="addUsage"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="retrieveUsage">
+         <http:operation location="retrieveUsage"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="persistUsage">
+         <http:operation location="persistUsage"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="CustomMeteringService">
+      <wsdl:port name="CustomMeteringServiceHttpsSoap11Endpoint" binding="ns:CustomMeteringServiceSoap11Binding">
+         <soap:address location="https://10.16.118.52:9443/services/CustomMeteringService.CustomMeteringServiceHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="CustomMeteringServiceHttpsSoap12Endpoint" binding="ns:CustomMeteringServiceSoap12Binding">
+         <soap12:address location="https://10.16.118.52:9443/services/CustomMeteringService.CustomMeteringServiceHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="CustomMeteringServiceHttpsEndpoint" binding="ns:CustomMeteringServiceHttpBinding">
+         <http:address location="https://10.16.118.52:9443/services/CustomMeteringService.CustomMeteringServiceHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

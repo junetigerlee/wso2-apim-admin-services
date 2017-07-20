@@ -1,0 +1,131 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://services.framework.authentication.application.identity.carbon.wso2.org" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://services.framework.authentication.application.identity.carbon.wso2.org">
+   <wsdl:documentation>SessionManagementService</wsdl:documentation>
+   <wsdl:types>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.framework.authentication.application.identity.carbon.wso2.org">
+         <xs:element name="removeMySession">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="removeMySessionResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="removeSession">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="sessionId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="removeSessionResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="removeSessionRequest">
+      <wsdl:part name="parameters" element="ns:removeSession"/>
+   </wsdl:message>
+   <wsdl:message name="removeSessionResponse">
+      <wsdl:part name="parameters" element="ns:removeSessionResponse"/>
+   </wsdl:message>
+   <wsdl:message name="removeMySessionRequest">
+      <wsdl:part name="parameters" element="ns:removeMySession"/>
+   </wsdl:message>
+   <wsdl:message name="removeMySessionResponse">
+      <wsdl:part name="parameters" element="ns:removeMySessionResponse"/>
+   </wsdl:message>
+   <wsdl:portType name="SessionManagementServicePortType">
+      <wsdl:operation name="removeSession">
+         <wsdl:input message="ns:removeSessionRequest" wsaw:Action="urn:removeSession"/>
+         <wsdl:output message="ns:removeSessionResponse" wsaw:Action="urn:removeSessionResponse"/>
+      </wsdl:operation>
+      <wsdl:operation name="removeMySession">
+         <wsdl:input message="ns:removeMySessionRequest" wsaw:Action="urn:removeMySession"/>
+         <wsdl:output message="ns:removeMySessionResponse" wsaw:Action="urn:removeMySessionResponse"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="SessionManagementServiceSoap11Binding" type="ns:SessionManagementServicePortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="removeSession">
+         <soap:operation soapAction="urn:removeSession" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="removeMySession">
+         <soap:operation soapAction="urn:removeMySession" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="SessionManagementServiceSoap12Binding" type="ns:SessionManagementServicePortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="removeSession">
+         <soap12:operation soapAction="urn:removeSession" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="removeMySession">
+         <soap12:operation soapAction="urn:removeMySession" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="SessionManagementServiceHttpBinding" type="ns:SessionManagementServicePortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="removeSession">
+         <http:operation location="removeSession"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="removeMySession">
+         <http:operation location="removeMySession"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="SessionManagementService">
+      <wsdl:port name="SessionManagementServiceHttpsSoap11Endpoint" binding="ns:SessionManagementServiceSoap11Binding">
+         <soap:address location="https://10.16.118.52:9443/services/SessionManagementService.SessionManagementServiceHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="SessionManagementServiceHttpsSoap12Endpoint" binding="ns:SessionManagementServiceSoap12Binding">
+         <soap12:address location="https://10.16.118.52:9443/services/SessionManagementService.SessionManagementServiceHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="SessionManagementServiceHttpsEndpoint" binding="ns:SessionManagementServiceHttpBinding">
+         <http:address location="https://10.16.118.52:9443/services/SessionManagementService.SessionManagementServiceHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

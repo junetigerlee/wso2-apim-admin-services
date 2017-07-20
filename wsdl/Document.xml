@@ -1,0 +1,475 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://services.add.document.governance.carbon.wso2.org" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns2="http://services.update.document.governance.carbon.wso2.org" xmlns:ns1="http://services.get.document.governance.carbon.wso2.org" xmlns:ns4="http://services.get.document.artifactids.governance.carbon.wso2.org" xmlns:ns3="http://services.delete.document.governance.carbon.wso2.org" xmlns:ns6="http://api.registry.carbon.wso2.org/xsd" xmlns:ns5="http://services.get.document.dependencies.governance.carbon.wso2.org" xmlns:ns8="http://exceptions.core.registry.carbon.wso2.org/xsd" xmlns:ns7="http://exception.api.governance.carbon.wso2.org/xsd" xmlns:tns="http://ws.apache.org/axis2" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.apache.org/axis2">
+   <wsdl:types>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.add.document.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="addDocumentServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addDocument">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="info" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addDocumentResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.document.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getDocumentServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getDocument">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getDocumentResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.update.document.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="updateDocumentServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="updateDocument">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="updatedInfo" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="updateDocumentResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.delete.document.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="deleteDocumentServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteDocument">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteDocumentResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.document.artifactids.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getDocumentArtifactIDsServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getDocumentArtifactIDs">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getDocumentArtifactIDsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.document.dependencies.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getDocumentDependenciesServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getDocumentDependencies">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getDocumentDependenciesResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.registry.carbon.wso2.org/xsd">
+         <xs:complexType name="RegistryException">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2233="http://exceptions.core.registry.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exception.api.governance.carbon.wso2.org/xsd">
+         <xs:import namespace="http://exceptions.core.registry.carbon.wso2.org/xsd"/>
+         <xs:complexType name="GovernanceException">
+            <xs:complexContent>
+               <xs:extension base="ns8:RegistryException">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2232="http://api.registry.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exceptions.core.registry.carbon.wso2.org/xsd">
+         <xs:import namespace="http://api.registry.carbon.wso2.org/xsd"/>
+         <xs:complexType name="RegistryException">
+            <xs:complexContent>
+               <xs:extension base="ns6:RegistryException">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="getDocumentDependenciesRequest">
+      <wsdl:part name="parameters" element="ns5:getDocumentDependencies"/>
+   </wsdl:message>
+   <wsdl:message name="getDocumentDependenciesResponse">
+      <wsdl:part name="parameters" element="ns5:getDocumentDependenciesResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getDocumentDependenciesServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns5:getDocumentDependenciesServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getDocumentArtifactIDsRequest">
+      <wsdl:part name="parameters" element="ns4:getDocumentArtifactIDs"/>
+   </wsdl:message>
+   <wsdl:message name="getDocumentArtifactIDsResponse">
+      <wsdl:part name="parameters" element="ns4:getDocumentArtifactIDsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getDocumentArtifactIDsServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns4:getDocumentArtifactIDsServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="addDocumentRequest">
+      <wsdl:part name="parameters" element="ns0:addDocument"/>
+   </wsdl:message>
+   <wsdl:message name="addDocumentResponse">
+      <wsdl:part name="parameters" element="ns0:addDocumentResponse"/>
+   </wsdl:message>
+   <wsdl:message name="addDocumentServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns0:addDocumentServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getDocumentRequest">
+      <wsdl:part name="parameters" element="ns1:getDocument"/>
+   </wsdl:message>
+   <wsdl:message name="getDocumentResponse">
+      <wsdl:part name="parameters" element="ns1:getDocumentResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getDocumentServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns1:getDocumentServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="deleteDocumentRequest">
+      <wsdl:part name="parameters" element="ns3:deleteDocument"/>
+   </wsdl:message>
+   <wsdl:message name="deleteDocumentResponse">
+      <wsdl:part name="parameters" element="ns3:deleteDocumentResponse"/>
+   </wsdl:message>
+   <wsdl:message name="deleteDocumentServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns3:deleteDocumentServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="updateDocumentRequest">
+      <wsdl:part name="parameters" element="ns2:updateDocument"/>
+   </wsdl:message>
+   <wsdl:message name="updateDocumentResponse">
+      <wsdl:part name="parameters" element="ns2:updateDocumentResponse"/>
+   </wsdl:message>
+   <wsdl:message name="updateDocumentServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns2:updateDocumentServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:portType name="DocumentPortType">
+      <wsdl:operation name="getDocumentDependencies">
+         <wsdl:input message="tns:getDocumentDependenciesRequest" wsaw:Action="urn:getDocumentDependencies"/>
+         <wsdl:output message="tns:getDocumentDependenciesResponse" wsaw:Action="urn:getDocumentDependenciesResponse"/>
+         <wsdl:fault message="tns:getDocumentDependenciesServiceGovernanceException" name="getDocumentDependenciesServiceGovernanceException" wsaw:Action="urn:getDocumentDependenciesgetDocumentDependenciesServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getDocumentArtifactIDs">
+         <wsdl:input message="tns:getDocumentArtifactIDsRequest" wsaw:Action="urn:getDocumentArtifactIDs"/>
+         <wsdl:output message="tns:getDocumentArtifactIDsResponse" wsaw:Action="urn:getDocumentArtifactIDsResponse"/>
+         <wsdl:fault message="tns:getDocumentArtifactIDsServiceGovernanceException" name="getDocumentArtifactIDsServiceGovernanceException" wsaw:Action="urn:getDocumentArtifactIDsgetDocumentArtifactIDsServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="addDocument">
+         <wsdl:input message="tns:addDocumentRequest" wsaw:Action="urn:addDocument"/>
+         <wsdl:output message="tns:addDocumentResponse" wsaw:Action="urn:addDocumentResponse"/>
+         <wsdl:fault message="tns:addDocumentServiceGovernanceException" name="addDocumentServiceGovernanceException" wsaw:Action="urn:addDocumentaddDocumentServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getDocument">
+         <wsdl:input message="tns:getDocumentRequest" wsaw:Action="urn:getDocument"/>
+         <wsdl:output message="tns:getDocumentResponse" wsaw:Action="urn:getDocumentResponse"/>
+         <wsdl:fault message="tns:getDocumentServiceGovernanceException" name="getDocumentServiceGovernanceException" wsaw:Action="urn:getDocumentgetDocumentServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="deleteDocument">
+         <wsdl:input message="tns:deleteDocumentRequest" wsaw:Action="urn:deleteDocument"/>
+         <wsdl:output message="tns:deleteDocumentResponse" wsaw:Action="urn:deleteDocumentResponse"/>
+         <wsdl:fault message="tns:deleteDocumentServiceGovernanceException" name="deleteDocumentServiceGovernanceException" wsaw:Action="urn:deleteDocumentdeleteDocumentServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="updateDocument">
+         <wsdl:input message="tns:updateDocumentRequest" wsaw:Action="urn:updateDocument"/>
+         <wsdl:output message="tns:updateDocumentResponse" wsaw:Action="urn:updateDocumentResponse"/>
+         <wsdl:fault message="tns:updateDocumentServiceGovernanceException" name="updateDocumentServiceGovernanceException" wsaw:Action="urn:updateDocumentupdateDocumentServiceGovernanceException"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="DocumentSoap11Binding" type="tns:DocumentPortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getDocumentDependencies">
+         <soap:operation soapAction="urn:getDocumentDependencies" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getDocumentDependenciesServiceGovernanceException">
+            <soap:fault use="literal" name="getDocumentDependenciesServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getDocumentArtifactIDs">
+         <soap:operation soapAction="urn:getDocumentArtifactIDs" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getDocumentArtifactIDsServiceGovernanceException">
+            <soap:fault use="literal" name="getDocumentArtifactIDsServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addDocument">
+         <soap:operation soapAction="urn:addDocument" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="addDocumentServiceGovernanceException">
+            <soap:fault use="literal" name="addDocumentServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getDocument">
+         <soap:operation soapAction="urn:getDocument" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getDocumentServiceGovernanceException">
+            <soap:fault use="literal" name="getDocumentServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteDocument">
+         <soap:operation soapAction="urn:deleteDocument" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="deleteDocumentServiceGovernanceException">
+            <soap:fault use="literal" name="deleteDocumentServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="updateDocument">
+         <soap:operation soapAction="urn:updateDocument" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="updateDocumentServiceGovernanceException">
+            <soap:fault use="literal" name="updateDocumentServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="DocumentSoap12Binding" type="tns:DocumentPortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getDocumentDependencies">
+         <soap12:operation soapAction="urn:getDocumentDependencies" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getDocumentDependenciesServiceGovernanceException">
+            <soap12:fault use="literal" name="getDocumentDependenciesServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getDocumentArtifactIDs">
+         <soap12:operation soapAction="urn:getDocumentArtifactIDs" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getDocumentArtifactIDsServiceGovernanceException">
+            <soap12:fault use="literal" name="getDocumentArtifactIDsServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addDocument">
+         <soap12:operation soapAction="urn:addDocument" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="addDocumentServiceGovernanceException">
+            <soap12:fault use="literal" name="addDocumentServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getDocument">
+         <soap12:operation soapAction="urn:getDocument" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getDocumentServiceGovernanceException">
+            <soap12:fault use="literal" name="getDocumentServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteDocument">
+         <soap12:operation soapAction="urn:deleteDocument" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="deleteDocumentServiceGovernanceException">
+            <soap12:fault use="literal" name="deleteDocumentServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="updateDocument">
+         <soap12:operation soapAction="urn:updateDocument" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="updateDocumentServiceGovernanceException">
+            <soap12:fault use="literal" name="updateDocumentServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="DocumentHttpBinding" type="tns:DocumentPortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="getDocumentDependencies">
+         <http:operation location="getDocumentDependencies"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getDocumentArtifactIDs">
+         <http:operation location="getDocumentArtifactIDs"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="addDocument">
+         <http:operation location="addDocument"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getDocument">
+         <http:operation location="getDocument"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteDocument">
+         <http:operation location="deleteDocument"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="updateDocument">
+         <http:operation location="updateDocument"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="Document">
+      <wsdl:port name="DocumentHttpsSoap11Endpoint" binding="tns:DocumentSoap11Binding">
+         <soap:address location="https://10.16.118.52:9443/services/Document.DocumentHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="DocumentHttpsSoap12Endpoint" binding="tns:DocumentSoap12Binding">
+         <soap12:address location="https://10.16.118.52:9443/services/Document.DocumentHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="DocumentHttpsEndpoint" binding="tns:DocumentHttpBinding">
+         <http:address location="https://10.16.118.52:9443/services/Document.DocumentHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

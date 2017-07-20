@@ -1,0 +1,475 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://services.add.provider.governance.carbon.wso2.org" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns2="http://services.update.provider.governance.carbon.wso2.org" xmlns:ns1="http://services.get.provider.governance.carbon.wso2.org" xmlns:ns4="http://services.get.provider.artifactids.governance.carbon.wso2.org" xmlns:ns3="http://services.delete.provider.governance.carbon.wso2.org" xmlns:ns6="http://api.registry.carbon.wso2.org/xsd" xmlns:ns5="http://services.get.provider.dependencies.governance.carbon.wso2.org" xmlns:ns8="http://exceptions.core.registry.carbon.wso2.org/xsd" xmlns:ns7="http://exception.api.governance.carbon.wso2.org/xsd" xmlns:tns="http://ws.apache.org/axis2" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.apache.org/axis2">
+   <wsdl:types>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.add.provider.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="addProviderServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addProvider">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="info" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addProviderResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.provider.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getProviderServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getProvider">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getProviderResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.update.provider.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="updateProviderServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="updateProvider">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="updatedInfo" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="updateProviderResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.delete.provider.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="deleteProviderServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteProvider">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteProviderResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.provider.artifactids.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getProviderArtifactIDsServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getProviderArtifactIDs">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getProviderArtifactIDsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.provider.dependencies.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getProviderDependenciesServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getProviderDependencies">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getProviderDependenciesResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.registry.carbon.wso2.org/xsd">
+         <xs:complexType name="RegistryException">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2233="http://exceptions.core.registry.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exception.api.governance.carbon.wso2.org/xsd">
+         <xs:import namespace="http://exceptions.core.registry.carbon.wso2.org/xsd"/>
+         <xs:complexType name="GovernanceException">
+            <xs:complexContent>
+               <xs:extension base="ns8:RegistryException">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2232="http://api.registry.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exceptions.core.registry.carbon.wso2.org/xsd">
+         <xs:import namespace="http://api.registry.carbon.wso2.org/xsd"/>
+         <xs:complexType name="RegistryException">
+            <xs:complexContent>
+               <xs:extension base="ns6:RegistryException">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="addProviderRequest">
+      <wsdl:part name="parameters" element="ns0:addProvider"/>
+   </wsdl:message>
+   <wsdl:message name="addProviderResponse">
+      <wsdl:part name="parameters" element="ns0:addProviderResponse"/>
+   </wsdl:message>
+   <wsdl:message name="addProviderServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns0:addProviderServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getProviderRequest">
+      <wsdl:part name="parameters" element="ns1:getProvider"/>
+   </wsdl:message>
+   <wsdl:message name="getProviderResponse">
+      <wsdl:part name="parameters" element="ns1:getProviderResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getProviderServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns1:getProviderServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="deleteProviderRequest">
+      <wsdl:part name="parameters" element="ns3:deleteProvider"/>
+   </wsdl:message>
+   <wsdl:message name="deleteProviderResponse">
+      <wsdl:part name="parameters" element="ns3:deleteProviderResponse"/>
+   </wsdl:message>
+   <wsdl:message name="deleteProviderServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns3:deleteProviderServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="updateProviderRequest">
+      <wsdl:part name="parameters" element="ns2:updateProvider"/>
+   </wsdl:message>
+   <wsdl:message name="updateProviderResponse">
+      <wsdl:part name="parameters" element="ns2:updateProviderResponse"/>
+   </wsdl:message>
+   <wsdl:message name="updateProviderServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns2:updateProviderServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getProviderDependenciesRequest">
+      <wsdl:part name="parameters" element="ns5:getProviderDependencies"/>
+   </wsdl:message>
+   <wsdl:message name="getProviderDependenciesResponse">
+      <wsdl:part name="parameters" element="ns5:getProviderDependenciesResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getProviderDependenciesServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns5:getProviderDependenciesServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getProviderArtifactIDsRequest">
+      <wsdl:part name="parameters" element="ns4:getProviderArtifactIDs"/>
+   </wsdl:message>
+   <wsdl:message name="getProviderArtifactIDsResponse">
+      <wsdl:part name="parameters" element="ns4:getProviderArtifactIDsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getProviderArtifactIDsServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns4:getProviderArtifactIDsServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:portType name="ProviderPortType">
+      <wsdl:operation name="addProvider">
+         <wsdl:input message="tns:addProviderRequest" wsaw:Action="urn:addProvider"/>
+         <wsdl:output message="tns:addProviderResponse" wsaw:Action="urn:addProviderResponse"/>
+         <wsdl:fault message="tns:addProviderServiceGovernanceException" name="addProviderServiceGovernanceException" wsaw:Action="urn:addProvideraddProviderServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getProvider">
+         <wsdl:input message="tns:getProviderRequest" wsaw:Action="urn:getProvider"/>
+         <wsdl:output message="tns:getProviderResponse" wsaw:Action="urn:getProviderResponse"/>
+         <wsdl:fault message="tns:getProviderServiceGovernanceException" name="getProviderServiceGovernanceException" wsaw:Action="urn:getProvidergetProviderServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="deleteProvider">
+         <wsdl:input message="tns:deleteProviderRequest" wsaw:Action="urn:deleteProvider"/>
+         <wsdl:output message="tns:deleteProviderResponse" wsaw:Action="urn:deleteProviderResponse"/>
+         <wsdl:fault message="tns:deleteProviderServiceGovernanceException" name="deleteProviderServiceGovernanceException" wsaw:Action="urn:deleteProviderdeleteProviderServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="updateProvider">
+         <wsdl:input message="tns:updateProviderRequest" wsaw:Action="urn:updateProvider"/>
+         <wsdl:output message="tns:updateProviderResponse" wsaw:Action="urn:updateProviderResponse"/>
+         <wsdl:fault message="tns:updateProviderServiceGovernanceException" name="updateProviderServiceGovernanceException" wsaw:Action="urn:updateProviderupdateProviderServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getProviderDependencies">
+         <wsdl:input message="tns:getProviderDependenciesRequest" wsaw:Action="urn:getProviderDependencies"/>
+         <wsdl:output message="tns:getProviderDependenciesResponse" wsaw:Action="urn:getProviderDependenciesResponse"/>
+         <wsdl:fault message="tns:getProviderDependenciesServiceGovernanceException" name="getProviderDependenciesServiceGovernanceException" wsaw:Action="urn:getProviderDependenciesgetProviderDependenciesServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getProviderArtifactIDs">
+         <wsdl:input message="tns:getProviderArtifactIDsRequest" wsaw:Action="urn:getProviderArtifactIDs"/>
+         <wsdl:output message="tns:getProviderArtifactIDsResponse" wsaw:Action="urn:getProviderArtifactIDsResponse"/>
+         <wsdl:fault message="tns:getProviderArtifactIDsServiceGovernanceException" name="getProviderArtifactIDsServiceGovernanceException" wsaw:Action="urn:getProviderArtifactIDsgetProviderArtifactIDsServiceGovernanceException"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="ProviderSoap11Binding" type="tns:ProviderPortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="addProvider">
+         <soap:operation soapAction="urn:addProvider" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="addProviderServiceGovernanceException">
+            <soap:fault use="literal" name="addProviderServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getProvider">
+         <soap:operation soapAction="urn:getProvider" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getProviderServiceGovernanceException">
+            <soap:fault use="literal" name="getProviderServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteProvider">
+         <soap:operation soapAction="urn:deleteProvider" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="deleteProviderServiceGovernanceException">
+            <soap:fault use="literal" name="deleteProviderServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="updateProvider">
+         <soap:operation soapAction="urn:updateProvider" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="updateProviderServiceGovernanceException">
+            <soap:fault use="literal" name="updateProviderServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getProviderDependencies">
+         <soap:operation soapAction="urn:getProviderDependencies" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getProviderDependenciesServiceGovernanceException">
+            <soap:fault use="literal" name="getProviderDependenciesServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getProviderArtifactIDs">
+         <soap:operation soapAction="urn:getProviderArtifactIDs" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getProviderArtifactIDsServiceGovernanceException">
+            <soap:fault use="literal" name="getProviderArtifactIDsServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="ProviderSoap12Binding" type="tns:ProviderPortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="addProvider">
+         <soap12:operation soapAction="urn:addProvider" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="addProviderServiceGovernanceException">
+            <soap12:fault use="literal" name="addProviderServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getProvider">
+         <soap12:operation soapAction="urn:getProvider" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getProviderServiceGovernanceException">
+            <soap12:fault use="literal" name="getProviderServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteProvider">
+         <soap12:operation soapAction="urn:deleteProvider" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="deleteProviderServiceGovernanceException">
+            <soap12:fault use="literal" name="deleteProviderServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="updateProvider">
+         <soap12:operation soapAction="urn:updateProvider" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="updateProviderServiceGovernanceException">
+            <soap12:fault use="literal" name="updateProviderServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getProviderDependencies">
+         <soap12:operation soapAction="urn:getProviderDependencies" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getProviderDependenciesServiceGovernanceException">
+            <soap12:fault use="literal" name="getProviderDependenciesServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getProviderArtifactIDs">
+         <soap12:operation soapAction="urn:getProviderArtifactIDs" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getProviderArtifactIDsServiceGovernanceException">
+            <soap12:fault use="literal" name="getProviderArtifactIDsServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="ProviderHttpBinding" type="tns:ProviderPortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="addProvider">
+         <http:operation location="addProvider"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getProvider">
+         <http:operation location="getProvider"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteProvider">
+         <http:operation location="deleteProvider"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="updateProvider">
+         <http:operation location="updateProvider"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getProviderDependencies">
+         <http:operation location="getProviderDependencies"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getProviderArtifactIDs">
+         <http:operation location="getProviderArtifactIDs"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="Provider">
+      <wsdl:port name="ProviderHttpsSoap11Endpoint" binding="tns:ProviderSoap11Binding">
+         <soap:address location="https://10.16.118.52:9443/services/Provider.ProviderHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="ProviderHttpsSoap12Endpoint" binding="tns:ProviderSoap12Binding">
+         <soap12:address location="https://10.16.118.52:9443/services/Provider.ProviderHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="ProviderHttpsEndpoint" binding="tns:ProviderHttpBinding">
+         <http:address location="https://10.16.118.52:9443/services/Provider.ProviderHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

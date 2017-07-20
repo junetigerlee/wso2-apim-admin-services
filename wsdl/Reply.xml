@@ -1,0 +1,475 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://services.add.reply.governance.carbon.wso2.org" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns2="http://services.update.reply.governance.carbon.wso2.org" xmlns:ns1="http://services.get.reply.governance.carbon.wso2.org" xmlns:ns4="http://services.get.reply.artifactids.governance.carbon.wso2.org" xmlns:ns3="http://services.delete.reply.governance.carbon.wso2.org" xmlns:ns6="http://api.registry.carbon.wso2.org/xsd" xmlns:ns5="http://services.get.reply.dependencies.governance.carbon.wso2.org" xmlns:ns8="http://exceptions.core.registry.carbon.wso2.org/xsd" xmlns:ns7="http://exception.api.governance.carbon.wso2.org/xsd" xmlns:tns="http://ws.apache.org/axis2" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.apache.org/axis2">
+   <wsdl:types>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.add.reply.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="addReplyServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addReply">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="info" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addReplyResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.reply.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getReplyServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getReply">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getReplyResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.update.reply.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="updateReplyServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="updateReply">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="updatedInfo" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="updateReplyResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.delete.reply.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="deleteReplyServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteReply">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteReplyResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.reply.artifactids.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getReplyArtifactIDsServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getReplyArtifactIDs">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getReplyArtifactIDsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.reply.dependencies.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getReplyDependenciesServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getReplyDependencies">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getReplyDependenciesResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.registry.carbon.wso2.org/xsd">
+         <xs:complexType name="RegistryException">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2233="http://exceptions.core.registry.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exception.api.governance.carbon.wso2.org/xsd">
+         <xs:import namespace="http://exceptions.core.registry.carbon.wso2.org/xsd"/>
+         <xs:complexType name="GovernanceException">
+            <xs:complexContent>
+               <xs:extension base="ns8:RegistryException">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2232="http://api.registry.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exceptions.core.registry.carbon.wso2.org/xsd">
+         <xs:import namespace="http://api.registry.carbon.wso2.org/xsd"/>
+         <xs:complexType name="RegistryException">
+            <xs:complexContent>
+               <xs:extension base="ns6:RegistryException">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="getReplyArtifactIDsRequest">
+      <wsdl:part name="parameters" element="ns4:getReplyArtifactIDs"/>
+   </wsdl:message>
+   <wsdl:message name="getReplyArtifactIDsResponse">
+      <wsdl:part name="parameters" element="ns4:getReplyArtifactIDsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getReplyArtifactIDsServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns4:getReplyArtifactIDsServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="addReplyRequest">
+      <wsdl:part name="parameters" element="ns0:addReply"/>
+   </wsdl:message>
+   <wsdl:message name="addReplyResponse">
+      <wsdl:part name="parameters" element="ns0:addReplyResponse"/>
+   </wsdl:message>
+   <wsdl:message name="addReplyServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns0:addReplyServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="updateReplyRequest">
+      <wsdl:part name="parameters" element="ns2:updateReply"/>
+   </wsdl:message>
+   <wsdl:message name="updateReplyResponse">
+      <wsdl:part name="parameters" element="ns2:updateReplyResponse"/>
+   </wsdl:message>
+   <wsdl:message name="updateReplyServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns2:updateReplyServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getReplyRequest">
+      <wsdl:part name="parameters" element="ns1:getReply"/>
+   </wsdl:message>
+   <wsdl:message name="getReplyResponse">
+      <wsdl:part name="parameters" element="ns1:getReplyResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getReplyServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns1:getReplyServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getReplyDependenciesRequest">
+      <wsdl:part name="parameters" element="ns5:getReplyDependencies"/>
+   </wsdl:message>
+   <wsdl:message name="getReplyDependenciesResponse">
+      <wsdl:part name="parameters" element="ns5:getReplyDependenciesResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getReplyDependenciesServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns5:getReplyDependenciesServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="deleteReplyRequest">
+      <wsdl:part name="parameters" element="ns3:deleteReply"/>
+   </wsdl:message>
+   <wsdl:message name="deleteReplyResponse">
+      <wsdl:part name="parameters" element="ns3:deleteReplyResponse"/>
+   </wsdl:message>
+   <wsdl:message name="deleteReplyServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns3:deleteReplyServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:portType name="ReplyPortType">
+      <wsdl:operation name="getReplyArtifactIDs">
+         <wsdl:input message="tns:getReplyArtifactIDsRequest" wsaw:Action="urn:getReplyArtifactIDs"/>
+         <wsdl:output message="tns:getReplyArtifactIDsResponse" wsaw:Action="urn:getReplyArtifactIDsResponse"/>
+         <wsdl:fault message="tns:getReplyArtifactIDsServiceGovernanceException" name="getReplyArtifactIDsServiceGovernanceException" wsaw:Action="urn:getReplyArtifactIDsgetReplyArtifactIDsServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="addReply">
+         <wsdl:input message="tns:addReplyRequest" wsaw:Action="urn:addReply"/>
+         <wsdl:output message="tns:addReplyResponse" wsaw:Action="urn:addReplyResponse"/>
+         <wsdl:fault message="tns:addReplyServiceGovernanceException" name="addReplyServiceGovernanceException" wsaw:Action="urn:addReplyaddReplyServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="updateReply">
+         <wsdl:input message="tns:updateReplyRequest" wsaw:Action="urn:updateReply"/>
+         <wsdl:output message="tns:updateReplyResponse" wsaw:Action="urn:updateReplyResponse"/>
+         <wsdl:fault message="tns:updateReplyServiceGovernanceException" name="updateReplyServiceGovernanceException" wsaw:Action="urn:updateReplyupdateReplyServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getReply">
+         <wsdl:input message="tns:getReplyRequest" wsaw:Action="urn:getReply"/>
+         <wsdl:output message="tns:getReplyResponse" wsaw:Action="urn:getReplyResponse"/>
+         <wsdl:fault message="tns:getReplyServiceGovernanceException" name="getReplyServiceGovernanceException" wsaw:Action="urn:getReplygetReplyServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getReplyDependencies">
+         <wsdl:input message="tns:getReplyDependenciesRequest" wsaw:Action="urn:getReplyDependencies"/>
+         <wsdl:output message="tns:getReplyDependenciesResponse" wsaw:Action="urn:getReplyDependenciesResponse"/>
+         <wsdl:fault message="tns:getReplyDependenciesServiceGovernanceException" name="getReplyDependenciesServiceGovernanceException" wsaw:Action="urn:getReplyDependenciesgetReplyDependenciesServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="deleteReply">
+         <wsdl:input message="tns:deleteReplyRequest" wsaw:Action="urn:deleteReply"/>
+         <wsdl:output message="tns:deleteReplyResponse" wsaw:Action="urn:deleteReplyResponse"/>
+         <wsdl:fault message="tns:deleteReplyServiceGovernanceException" name="deleteReplyServiceGovernanceException" wsaw:Action="urn:deleteReplydeleteReplyServiceGovernanceException"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="ReplySoap11Binding" type="tns:ReplyPortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getReplyArtifactIDs">
+         <soap:operation soapAction="urn:getReplyArtifactIDs" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getReplyArtifactIDsServiceGovernanceException">
+            <soap:fault use="literal" name="getReplyArtifactIDsServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addReply">
+         <soap:operation soapAction="urn:addReply" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="addReplyServiceGovernanceException">
+            <soap:fault use="literal" name="addReplyServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="updateReply">
+         <soap:operation soapAction="urn:updateReply" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="updateReplyServiceGovernanceException">
+            <soap:fault use="literal" name="updateReplyServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getReply">
+         <soap:operation soapAction="urn:getReply" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getReplyServiceGovernanceException">
+            <soap:fault use="literal" name="getReplyServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getReplyDependencies">
+         <soap:operation soapAction="urn:getReplyDependencies" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getReplyDependenciesServiceGovernanceException">
+            <soap:fault use="literal" name="getReplyDependenciesServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteReply">
+         <soap:operation soapAction="urn:deleteReply" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="deleteReplyServiceGovernanceException">
+            <soap:fault use="literal" name="deleteReplyServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="ReplySoap12Binding" type="tns:ReplyPortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getReplyArtifactIDs">
+         <soap12:operation soapAction="urn:getReplyArtifactIDs" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getReplyArtifactIDsServiceGovernanceException">
+            <soap12:fault use="literal" name="getReplyArtifactIDsServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addReply">
+         <soap12:operation soapAction="urn:addReply" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="addReplyServiceGovernanceException">
+            <soap12:fault use="literal" name="addReplyServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="updateReply">
+         <soap12:operation soapAction="urn:updateReply" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="updateReplyServiceGovernanceException">
+            <soap12:fault use="literal" name="updateReplyServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getReply">
+         <soap12:operation soapAction="urn:getReply" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getReplyServiceGovernanceException">
+            <soap12:fault use="literal" name="getReplyServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getReplyDependencies">
+         <soap12:operation soapAction="urn:getReplyDependencies" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getReplyDependenciesServiceGovernanceException">
+            <soap12:fault use="literal" name="getReplyDependenciesServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteReply">
+         <soap12:operation soapAction="urn:deleteReply" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="deleteReplyServiceGovernanceException">
+            <soap12:fault use="literal" name="deleteReplyServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="ReplyHttpBinding" type="tns:ReplyPortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="getReplyArtifactIDs">
+         <http:operation location="getReplyArtifactIDs"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="addReply">
+         <http:operation location="addReply"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="updateReply">
+         <http:operation location="updateReply"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getReply">
+         <http:operation location="getReply"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getReplyDependencies">
+         <http:operation location="getReplyDependencies"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteReply">
+         <http:operation location="deleteReply"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="Reply">
+      <wsdl:port name="ReplyHttpsSoap11Endpoint" binding="tns:ReplySoap11Binding">
+         <soap:address location="https://10.16.118.52:9443/services/Reply.ReplyHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="ReplyHttpsSoap12Endpoint" binding="tns:ReplySoap12Binding">
+         <soap12:address location="https://10.16.118.52:9443/services/Reply.ReplyHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="ReplyHttpsEndpoint" binding="tns:ReplyHttpBinding">
+         <http:address location="https://10.16.118.52:9443/services/Reply.ReplyHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

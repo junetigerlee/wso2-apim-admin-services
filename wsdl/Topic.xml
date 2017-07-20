@@ -1,0 +1,475 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://services.add.topic.governance.carbon.wso2.org" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns2="http://services.update.topic.governance.carbon.wso2.org" xmlns:ns1="http://services.get.topic.governance.carbon.wso2.org" xmlns:ns4="http://services.get.topic.artifactids.governance.carbon.wso2.org" xmlns:ns3="http://services.delete.topic.governance.carbon.wso2.org" xmlns:ns6="http://api.registry.carbon.wso2.org/xsd" xmlns:ns5="http://services.get.topic.dependencies.governance.carbon.wso2.org" xmlns:ns8="http://exceptions.core.registry.carbon.wso2.org/xsd" xmlns:ns7="http://exception.api.governance.carbon.wso2.org/xsd" xmlns:tns="http://ws.apache.org/axis2" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.apache.org/axis2">
+   <wsdl:types>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.add.topic.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="addTopicServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addTopic">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="info" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addTopicResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.topic.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getTopicServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getTopic">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getTopicResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.update.topic.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="updateTopicServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="updateTopic">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="updatedInfo" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="updateTopicResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.delete.topic.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="deleteTopicServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteTopic">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteTopicResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.topic.artifactids.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getTopicArtifactIDsServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getTopicArtifactIDs">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getTopicArtifactIDsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.topic.dependencies.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getTopicDependenciesServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getTopicDependencies">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getTopicDependenciesResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.registry.carbon.wso2.org/xsd">
+         <xs:complexType name="RegistryException">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2233="http://exceptions.core.registry.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exception.api.governance.carbon.wso2.org/xsd">
+         <xs:import namespace="http://exceptions.core.registry.carbon.wso2.org/xsd"/>
+         <xs:complexType name="GovernanceException">
+            <xs:complexContent>
+               <xs:extension base="ns8:RegistryException">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2232="http://api.registry.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exceptions.core.registry.carbon.wso2.org/xsd">
+         <xs:import namespace="http://api.registry.carbon.wso2.org/xsd"/>
+         <xs:complexType name="RegistryException">
+            <xs:complexContent>
+               <xs:extension base="ns6:RegistryException">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="deleteTopicRequest">
+      <wsdl:part name="parameters" element="ns3:deleteTopic"/>
+   </wsdl:message>
+   <wsdl:message name="deleteTopicResponse">
+      <wsdl:part name="parameters" element="ns3:deleteTopicResponse"/>
+   </wsdl:message>
+   <wsdl:message name="deleteTopicServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns3:deleteTopicServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="updateTopicRequest">
+      <wsdl:part name="parameters" element="ns2:updateTopic"/>
+   </wsdl:message>
+   <wsdl:message name="updateTopicResponse">
+      <wsdl:part name="parameters" element="ns2:updateTopicResponse"/>
+   </wsdl:message>
+   <wsdl:message name="updateTopicServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns2:updateTopicServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getTopicDependenciesRequest">
+      <wsdl:part name="parameters" element="ns5:getTopicDependencies"/>
+   </wsdl:message>
+   <wsdl:message name="getTopicDependenciesResponse">
+      <wsdl:part name="parameters" element="ns5:getTopicDependenciesResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getTopicDependenciesServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns5:getTopicDependenciesServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="addTopicRequest">
+      <wsdl:part name="parameters" element="ns0:addTopic"/>
+   </wsdl:message>
+   <wsdl:message name="addTopicResponse">
+      <wsdl:part name="parameters" element="ns0:addTopicResponse"/>
+   </wsdl:message>
+   <wsdl:message name="addTopicServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns0:addTopicServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getTopicArtifactIDsRequest">
+      <wsdl:part name="parameters" element="ns4:getTopicArtifactIDs"/>
+   </wsdl:message>
+   <wsdl:message name="getTopicArtifactIDsResponse">
+      <wsdl:part name="parameters" element="ns4:getTopicArtifactIDsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getTopicArtifactIDsServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns4:getTopicArtifactIDsServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getTopicRequest">
+      <wsdl:part name="parameters" element="ns1:getTopic"/>
+   </wsdl:message>
+   <wsdl:message name="getTopicResponse">
+      <wsdl:part name="parameters" element="ns1:getTopicResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getTopicServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns1:getTopicServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:portType name="TopicPortType">
+      <wsdl:operation name="deleteTopic">
+         <wsdl:input message="tns:deleteTopicRequest" wsaw:Action="urn:deleteTopic"/>
+         <wsdl:output message="tns:deleteTopicResponse" wsaw:Action="urn:deleteTopicResponse"/>
+         <wsdl:fault message="tns:deleteTopicServiceGovernanceException" name="deleteTopicServiceGovernanceException" wsaw:Action="urn:deleteTopicdeleteTopicServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="updateTopic">
+         <wsdl:input message="tns:updateTopicRequest" wsaw:Action="urn:updateTopic"/>
+         <wsdl:output message="tns:updateTopicResponse" wsaw:Action="urn:updateTopicResponse"/>
+         <wsdl:fault message="tns:updateTopicServiceGovernanceException" name="updateTopicServiceGovernanceException" wsaw:Action="urn:updateTopicupdateTopicServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getTopicDependencies">
+         <wsdl:input message="tns:getTopicDependenciesRequest" wsaw:Action="urn:getTopicDependencies"/>
+         <wsdl:output message="tns:getTopicDependenciesResponse" wsaw:Action="urn:getTopicDependenciesResponse"/>
+         <wsdl:fault message="tns:getTopicDependenciesServiceGovernanceException" name="getTopicDependenciesServiceGovernanceException" wsaw:Action="urn:getTopicDependenciesgetTopicDependenciesServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="addTopic">
+         <wsdl:input message="tns:addTopicRequest" wsaw:Action="urn:addTopic"/>
+         <wsdl:output message="tns:addTopicResponse" wsaw:Action="urn:addTopicResponse"/>
+         <wsdl:fault message="tns:addTopicServiceGovernanceException" name="addTopicServiceGovernanceException" wsaw:Action="urn:addTopicaddTopicServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getTopicArtifactIDs">
+         <wsdl:input message="tns:getTopicArtifactIDsRequest" wsaw:Action="urn:getTopicArtifactIDs"/>
+         <wsdl:output message="tns:getTopicArtifactIDsResponse" wsaw:Action="urn:getTopicArtifactIDsResponse"/>
+         <wsdl:fault message="tns:getTopicArtifactIDsServiceGovernanceException" name="getTopicArtifactIDsServiceGovernanceException" wsaw:Action="urn:getTopicArtifactIDsgetTopicArtifactIDsServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getTopic">
+         <wsdl:input message="tns:getTopicRequest" wsaw:Action="urn:getTopic"/>
+         <wsdl:output message="tns:getTopicResponse" wsaw:Action="urn:getTopicResponse"/>
+         <wsdl:fault message="tns:getTopicServiceGovernanceException" name="getTopicServiceGovernanceException" wsaw:Action="urn:getTopicgetTopicServiceGovernanceException"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="TopicSoap11Binding" type="tns:TopicPortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="deleteTopic">
+         <soap:operation soapAction="urn:deleteTopic" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="deleteTopicServiceGovernanceException">
+            <soap:fault use="literal" name="deleteTopicServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="updateTopic">
+         <soap:operation soapAction="urn:updateTopic" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="updateTopicServiceGovernanceException">
+            <soap:fault use="literal" name="updateTopicServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getTopicDependencies">
+         <soap:operation soapAction="urn:getTopicDependencies" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getTopicDependenciesServiceGovernanceException">
+            <soap:fault use="literal" name="getTopicDependenciesServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addTopic">
+         <soap:operation soapAction="urn:addTopic" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="addTopicServiceGovernanceException">
+            <soap:fault use="literal" name="addTopicServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getTopicArtifactIDs">
+         <soap:operation soapAction="urn:getTopicArtifactIDs" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getTopicArtifactIDsServiceGovernanceException">
+            <soap:fault use="literal" name="getTopicArtifactIDsServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getTopic">
+         <soap:operation soapAction="urn:getTopic" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getTopicServiceGovernanceException">
+            <soap:fault use="literal" name="getTopicServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="TopicSoap12Binding" type="tns:TopicPortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="deleteTopic">
+         <soap12:operation soapAction="urn:deleteTopic" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="deleteTopicServiceGovernanceException">
+            <soap12:fault use="literal" name="deleteTopicServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="updateTopic">
+         <soap12:operation soapAction="urn:updateTopic" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="updateTopicServiceGovernanceException">
+            <soap12:fault use="literal" name="updateTopicServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getTopicDependencies">
+         <soap12:operation soapAction="urn:getTopicDependencies" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getTopicDependenciesServiceGovernanceException">
+            <soap12:fault use="literal" name="getTopicDependenciesServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addTopic">
+         <soap12:operation soapAction="urn:addTopic" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="addTopicServiceGovernanceException">
+            <soap12:fault use="literal" name="addTopicServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getTopicArtifactIDs">
+         <soap12:operation soapAction="urn:getTopicArtifactIDs" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getTopicArtifactIDsServiceGovernanceException">
+            <soap12:fault use="literal" name="getTopicArtifactIDsServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getTopic">
+         <soap12:operation soapAction="urn:getTopic" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getTopicServiceGovernanceException">
+            <soap12:fault use="literal" name="getTopicServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="TopicHttpBinding" type="tns:TopicPortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="deleteTopic">
+         <http:operation location="deleteTopic"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="updateTopic">
+         <http:operation location="updateTopic"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getTopicDependencies">
+         <http:operation location="getTopicDependencies"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="addTopic">
+         <http:operation location="addTopic"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getTopicArtifactIDs">
+         <http:operation location="getTopicArtifactIDs"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getTopic">
+         <http:operation location="getTopic"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="Topic">
+      <wsdl:port name="TopicHttpsSoap11Endpoint" binding="tns:TopicSoap11Binding">
+         <soap:address location="https://10.16.118.52:9443/services/Topic.TopicHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="TopicHttpsSoap12Endpoint" binding="tns:TopicSoap12Binding">
+         <soap12:address location="https://10.16.118.52:9443/services/Topic.TopicHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="TopicHttpsEndpoint" binding="tns:TopicHttpBinding">
+         <http:address location="https://10.16.118.52:9443/services/Topic.TopicHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

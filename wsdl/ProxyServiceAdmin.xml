@@ -1,0 +1,2243 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ax2587="http://deployers.synapse.apache.org/xsd" xmlns:ax2621="http://util.axis2.apache.org/xsd" xmlns:ax2665="http://carbonext.synapse.apache.org/xsd" xmlns:ax2589="http://engine.axis2.apache.org/xsd" xmlns:ax2623="http://transaction.axis2.apache.org/xsd" xmlns:ax2668="http://addressing.axis2.apache.org/xsd" xmlns:ax2626="http://store.statistics.flow.aspects.synapse.apache.org/xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ax2580="http://base.mediators.synapse.apache.org/xsd" xmlns:ax2581="http://mediators.synapse.apache.org/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax2584="http://synapse.apache.org/xsd" xmlns:ax2585="http://config.synapse.apache.org/xsd" xmlns:ax2619="http://securevault.wso2.org/xsd" xmlns:ax2575="http://resolver.util.synapse.apache.org/xsd" xmlns:ax2577="http://endpoints.synapse.apache.org/xsd" xmlns:ax2656="http://io.java/xsd" xmlns:ax2613="http://java2wsdl.description.axis2.apache.org/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ax2572="http://net.java/xsd" xmlns:ax2650="http://spi.channels.nio.java/xsd" xmlns:ax2649="http://channels.nio.java/xsd" xmlns:tns="http://service.proxyadmin.carbon.wso2.org" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax2607="http://util.deployment.axis2.apache.org/xsd" xmlns:ax2608="http://description.axis2.apache.org/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax2565="http://axis2.core.synapse.apache.org/xsd" xmlns:ax2566="http://aspects.synapse.apache.org/xsd" xmlns:ax2643="http://core.synapse.apache.org/xsd" xmlns:ax2644="http://concurrent.util.java/xsd" xmlns:ax2568="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd" xmlns:ax2601="http://state.clustering.axis2.apache.org/xsd" xmlns:ax2569="http://util.java/xsd" xmlns:ns="http://org.apache.synapse/xsd" xmlns:ax2648="http://debug.synapse.apache.org/xsd" xmlns:ax2680="http://xpath.om.axiom.apache.org/xsd" xmlns:ax2681="http://jaxen.org/xsd" xmlns:ax2682="http://expr.jaxen.org/xsd" xmlns:ax2563="http://proxyadmin.carbon.wso2.org/xsd" xmlns:ax2638="http://soap.axiom.apache.org/xsd" xmlns:ax2639="http://om.axiom.apache.org/xsd" xmlns:ax2630="http://registry.synapse.apache.org/xsd" xmlns:ax2674="http://constructs.debug.synapse.apache.org/xsd" xmlns:ax2598="http://management.clustering.axis2.apache.org/xsd" xmlns:ax2633="http://task.synapse.apache.org/xsd" xmlns:ax2679="http://xml.config.synapse.apache.org/xsd" xmlns:ax2590="http://clustering.axis2.apache.org/xsd" xmlns:ax2591="http://context.axis2.apache.org/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ax2594="http://threadpool.util.axis2.apache.org/xsd" xmlns:ax2671="http://logging.commons.apache.org/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://service.proxyadmin.carbon.wso2.org">
+   <wsdl:documentation>ProxyServiceAdmin</wsdl:documentation>
+   <wsdl:types>
+      <xs:schema xmlns:ax2578="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://endpoints.synapse.apache.org/xsd">
+         <xs:import namespace="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd"/>
+         <xs:complexType abstract="true" name="Endpoint">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="artifactContainerName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="children" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="componentStatisticsId" nillable="true" type="ax2578:ArtifactHolder"/>
+               <xs:element minOccurs="0" name="context" nillable="true" type="ax2577:EndpointContext"/>
+               <xs:element minOccurs="0" name="errorHandler" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="initialized" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="isEdited" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="metricsMBean" nillable="true" type="ax2577:EndpointView"/>
+               <xs:element minOccurs="0" name="parentEndpoint" nillable="true" type="ax2577:Endpoint"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="EndpointContext">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType name="EndpointView">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="active" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="activeChildren" type="xs:int"/>
+               <xs:element minOccurs="0" name="avgSizeReceived" type="xs:double"/>
+               <xs:element minOccurs="0" name="avgSizeSent" type="xs:double"/>
+               <xs:element minOccurs="0" name="bytesReceived" type="xs:long"/>
+               <xs:element minOccurs="0" name="bytesSent" type="xs:long"/>
+               <xs:element minOccurs="0" name="consecutiveEndpointSuspensions" type="xs:int"/>
+               <xs:element minOccurs="0" name="consecutiveEndpointTimeouts" type="xs:int"/>
+               <xs:element minOccurs="0" name="faultsReceiving" type="xs:long"/>
+               <xs:element minOccurs="0" name="faultsSending" type="xs:long"/>
+               <xs:element minOccurs="0" name="last15MinuteEndpointSuspensions" type="xs:int"/>
+               <xs:element minOccurs="0" name="last15MinuteEndpointTimeouts" type="xs:int"/>
+               <xs:element minOccurs="0" name="last5MinuteEndpointSuspensions" type="xs:int"/>
+               <xs:element minOccurs="0" name="last5MinuteEndpointTimeouts" type="xs:int"/>
+               <xs:element minOccurs="0" name="lastMinuteEndpointSuspensions" type="xs:int"/>
+               <xs:element minOccurs="0" name="lastMinuteEndpointTimeouts" type="xs:int"/>
+               <xs:element minOccurs="0" name="lastResetTime" type="xs:long"/>
+               <xs:element minOccurs="0" name="maxSizeReceived" type="xs:long"/>
+               <xs:element minOccurs="0" name="maxSizeSent" type="xs:long"/>
+               <xs:element minOccurs="0" name="messagesReceived" type="xs:long"/>
+               <xs:element minOccurs="0" name="messagesSent" type="xs:long"/>
+               <xs:element minOccurs="0" name="metricsWindow" type="xs:long"/>
+               <xs:element minOccurs="0" name="minSizeReceived" type="xs:long"/>
+               <xs:element minOccurs="0" name="minSizeSent" type="xs:long"/>
+               <xs:element minOccurs="0" name="readyChildren" type="xs:int"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="receivingFaultTable" nillable="true" type="xs:int"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="responseCodeTable" nillable="true" type="xs:int"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="sendingFaultTable" nillable="true" type="xs:int"/>
+               <xs:element minOccurs="0" name="suspended" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="suspendedAt" nillable="true" type="xs:date"/>
+               <xs:element minOccurs="0" name="switchedOff" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="timedout" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="timedoutAt" nillable="true" type="xs:date"/>
+               <xs:element minOccurs="0" name="timeoutsReceiving" type="xs:long"/>
+               <xs:element minOccurs="0" name="timeoutsSending" type="xs:long"/>
+               <xs:element minOccurs="0" name="totalChildren" type="xs:int"/>
+               <xs:element minOccurs="0" name="totalEndpointSuspensions" type="xs:int"/>
+               <xs:element minOccurs="0" name="totalEndpointTimeouts" type="xs:int"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2669="http://util.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://addressing.axis2.apache.org/xsd">
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:complexType name="EndpointReference">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="WSAddressingAnonymous" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="address" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="addressAttributes" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="allReferenceParameters" nillable="true" type="ax2669:Map"/>
+               <xs:element minOccurs="0" name="attributes" nillable="true" type="xs:anyType"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="extensibleElements" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="logCorrelationIDString" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="metaData" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="metadataAttributes" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="referenceParameters" nillable="true" type="xs:anyType"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="RelatesTo">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="extensibilityAttributes" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="relationshipType" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2685="http://util.java/xsd" xmlns:ax2684="http://jaxen.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xpath.om.axiom.apache.org/xsd">
+         <xs:import namespace="http://jaxen.org/xsd"/>
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:complexType name="AXIOMXPath">
+            <xs:complexContent>
+               <xs:extension base="ax2681:BaseXPath">
+                  <xs:sequence>
+                     <xs:element minOccurs="0" name="namespaces" nillable="true" type="ax2685:Map"/>
+                  </xs:sequence>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://deployers.synapse.apache.org/xsd">
+         <xs:complexType name="SynapseArtifactDeploymentStore">
+            <xs:sequence>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="classMediatorClassLoaders" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="faultSeqLstUpdatedFile" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="mainSeqLstUpdatedFile" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2634="http://util.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://task.synapse.apache.org/xsd">
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:complexType abstract="true" name="TaskManager">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configurationProperties" nillable="true" type="ax2569:Properties"/>
+               <xs:element minOccurs="0" name="initialized" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="providerClass" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="runningTaskCount" type="xs:int"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="taskNames" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="SynapseTaskManager">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="initialized" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="taskDescriptionRepository" nillable="true" type="ax2633:TaskDescriptionRepository"/>
+               <xs:element minOccurs="0" name="taskManagerImpl" nillable="true" type="ax2633:TaskManager"/>
+               <xs:element minOccurs="0" name="taskScheduler" nillable="true" type="ax2633:TaskScheduler"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="TaskDescriptionRepository">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="allTaskDescriptions" nillable="true" type="ax2569:Iterator"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="TaskScheduler">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="initialized" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="jobDetailFactory" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="runningTaskCount" type="xs:int"/>
+               <xs:element minOccurs="0" name="triggerFactory" nillable="true" type="xs:anyType"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2570="http://util.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd">
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:complexType name="ArtifactHolder">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="exitFromBox" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="hashCode" type="xs:int"/>
+               <xs:element minOccurs="0" name="hashCodeAsString" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="id" type="xs:int"/>
+               <xs:element minOccurs="0" name="idString" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="lastParent" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="list" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="parent" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="stack" nillable="true" type="ax2570:Stack"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2620="http://securevault.wso2.org/xsd" xmlns:ax2622="http://util.axis2.apache.org/xsd" xmlns:ax2624="http://transaction.axis2.apache.org/xsd" xmlns:ax2605="http://clustering.axis2.apache.org/xsd" xmlns:ax2617="http://util.deployment.axis2.apache.org/xsd" xmlns:ax2606="http://util.java/xsd" xmlns:ax2618="http://net.java/xsd" xmlns:ax2593="http://context.axis2.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://engine.axis2.apache.org/xsd">
+         <xs:import namespace="http://context.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://clustering.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:import namespace="http://util.deployment.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://net.java/xsd"/>
+         <xs:import namespace="http://securevault.wso2.org/xsd"/>
+         <xs:import namespace="http://util.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://transaction.axis2.apache.org/xsd"/>
+         <xs:complexType name="AxisConfiguration">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="childFirstClassLoading" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="clusteringAgent" nillable="true" type="ax2605:ClusteringAgent"/>
+               <xs:element minOccurs="0" name="configurator" nillable="true" type="ax2589:AxisConfigurator"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="faultyModules" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="faultyServices" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="faultyServicesDuetoModules" nillable="true" type="ax2606:Map"/>
+               <xs:element minOccurs="0" name="globalModules" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="globalOutPhase" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="inFaultFlowPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="inFaultPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="inFlowPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="inPhasesUptoAndIncludingPostDispatch" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="key" nillable="true" type="xs:anyType"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="localPolicyAssertions" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="moduleClassLoader" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="modules" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="observersList" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="outFaultFlowPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="outFaultPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="outFlowPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="phasesInfo" nillable="true" type="ax2617:PhasesInfo"/>
+               <xs:element minOccurs="0" name="repository" nillable="true" type="ax2618:URL"/>
+               <xs:element minOccurs="0" name="secretResolver" nillable="true" type="ax2620:SecretResolver"/>
+               <xs:element minOccurs="0" name="serviceClassLoader" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="serviceGroups" nillable="true" type="ax2606:Iterator"/>
+               <xs:element minOccurs="0" name="services" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="start" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="systemClassLoader" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="targetResolverChain" nillable="true" type="ax2621:TargetResolver"/>
+               <xs:element minOccurs="0" name="transactionConfig" nillable="true" type="ax2623:TransactionConfiguration"/>
+               <xs:element minOccurs="0" name="transactionConfiguration" nillable="true" type="ax2623:TransactionConfiguration"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="transportsIn" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="transportsOut" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="ListenerManager">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configctx" nillable="true" type="ax2591:ConfigurationContext"/>
+               <xs:element minOccurs="0" name="shutdownHookRequired" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="stopped" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="AxisConfigurator">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="axisConfiguration" nillable="true" type="ax2589:AxisConfiguration"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="ObjectSupplier">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="ServiceLifeCycle">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="MessageReceiver">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://aspects.synapse.apache.org/xsd">
+         <xs:complexType name="AspectConfiguration">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="hashCode" nillable="true" type="xs:int"/>
+               <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="statisticsEnable" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="tracingEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="uniqueId" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://expr.jaxen.org/xsd">
+         <xs:complexType abstract="true" name="Expr">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="text" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2592="http://engine.axis2.apache.org/xsd" xmlns:ax2595="http://threadpool.util.axis2.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://context.axis2.apache.org/xsd">
+         <xs:import namespace="http://engine.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://threadpool.util.axis2.apache.org/xsd"/>
+         <xs:complexType name="ConfigurationContext">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="anyOperationContextRegistered" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="axisConfiguration" nillable="true" type="ax2589:AxisConfiguration"/>
+               <xs:element minOccurs="0" name="contextRoot" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="listenerManager" nillable="true" type="ax2589:ListenerManager"/>
+               <xs:element minOccurs="0" name="rootContext" nillable="true" type="ax2591:ConfigurationContext"/>
+               <xs:element minOccurs="0" name="serviceContextPath" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceGroupContextIDs" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="serviceGroupContextTimeoutInterval" type="xs:long"/>
+               <xs:element minOccurs="0" name="serviceGroupContextTimoutInterval" type="xs:long"/>
+               <xs:element minOccurs="0" name="serviceGroupContexts" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="servicePath" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="threadPool" nillable="true" type="ax2594:ThreadFactory"/>
+               <xs:element minOccurs="0" name="transportManager" nillable="true" type="ax2589:ListenerManager"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2653="http://net.java/xsd" xmlns:ax2651="http://spi.channels.nio.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://channels.nio.java/xsd">
+         <xs:import namespace="http://spi.channels.nio.java/xsd"/>
+         <xs:import namespace="http://net.java/xsd"/>
+         <xs:complexType abstract="true" name="SelectableChannel">
+            <xs:complexContent>
+               <xs:extension base="ax2650:AbstractInterruptibleChannel">
+                  <xs:sequence>
+                     <xs:element minOccurs="0" name="blocking" type="xs:boolean"/>
+                     <xs:element minOccurs="0" name="registered" type="xs:boolean"/>
+                  </xs:sequence>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="ServerSocketChannel">
+            <xs:complexContent>
+               <xs:extension base="ax2650:AbstractSelectableChannel">
+                  <xs:sequence>
+                     <xs:element minOccurs="0" name="localAddress" nillable="true" type="ax2653:SocketAddress"/>
+                  </xs:sequence>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://util.axis2.apache.org/xsd">
+         <xs:complexType abstract="true" name="TargetResolver">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2688="http://synapse.apache.org/xsd" xmlns:ax2677="http://mediators.synapse.apache.org/xsd" xmlns:ax2678="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://base.mediators.synapse.apache.org/xsd">
+         <xs:import namespace="http://mediators.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://synapse.apache.org/xsd"/>
+         <xs:complexType name="SequenceMediator">
+            <xs:complexContent>
+               <xs:extension base="ax2581:AbstractListMediator">
+                  <xs:sequence>
+                     <xs:element minOccurs="0" name="artifactContainerName" nillable="true" type="xs:string"/>
+                     <xs:element minOccurs="0" name="auditId" nillable="true" type="xs:string"/>
+                     <xs:element minOccurs="0" name="componentStatisticsId" nillable="true" type="ax2568:ArtifactHolder"/>
+                     <xs:element minOccurs="0" name="contentAware" type="xs:boolean"/>
+                     <xs:element minOccurs="0" name="dynamic" type="xs:boolean"/>
+                     <xs:element minOccurs="0" name="edited" type="xs:boolean"/>
+                     <xs:element minOccurs="0" name="errorHandler" nillable="true" type="xs:string"/>
+                     <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string"/>
+                     <xs:element minOccurs="0" name="initialized" type="xs:boolean"/>
+                     <xs:element minOccurs="0" name="isEdited" type="xs:boolean"/>
+                     <xs:element minOccurs="0" name="key" nillable="true" type="ax2581:Value"/>
+                     <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                     <xs:element minOccurs="0" name="registryKey" nillable="true" type="xs:string"/>
+                     <xs:element minOccurs="0" name="sequenceNameForStatistics" nillable="true" type="xs:string"/>
+                     <xs:element minOccurs="0" name="sequenceType" nillable="true" type="ax2584:SequenceType"/>
+                  </xs:sequence>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2610="http://util.java/xsd" xmlns:ax2611="http://util.deployment.axis2.apache.org/xsd" xmlns:ax2612="http://net.java/xsd" xmlns:ax2609="http://engine.axis2.apache.org/xsd" xmlns:ax2615="http://java2wsdl.description.axis2.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://description.axis2.apache.org/xsd">
+         <xs:import namespace="http://engine.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:import namespace="http://util.deployment.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://net.java/xsd"/>
+         <xs:import namespace="http://java2wsdl.description.axis2.apache.org/xsd"/>
+         <xs:complexType abstract="true" name="AxisOperation">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="WSAMappingList" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="axisService" nillable="true" type="ax2608:AxisService"/>
+               <xs:element minOccurs="0" name="axisSpecificMEPConstant" type="xs:int"/>
+               <xs:element minOccurs="0" name="controlOperation" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="faultAction" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="faultActionNames" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="faultMessages" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="inputAction" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="key" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="messageExchangePattern" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="messageReceiver" nillable="true" type="ax2589:MessageReceiver"/>
+               <xs:element minOccurs="0" name="messages" nillable="true" type="ax2610:Iterator"/>
+               <xs:element minOccurs="0" name="moduleRefs" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="name" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="outputAction" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="phasesInFaultFlow" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="phasesOutFaultFlow" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="phasesOutFlow" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="remainingPhasesInFlow" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="soapAction" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="style" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="wsamappingList" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="AxisService">
+            <xs:sequence>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="EPRs" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="WSAddressingFlag" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="active" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="axisServiceGroup" nillable="true" type="ax2608:AxisServiceGroup"/>
+               <xs:element minOccurs="0" name="bindingName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="classLoader" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="clientSide" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="controlOperations" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="customSchemaNamePrefix" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="customSchemaNameSuffix" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="customWsdl" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="elementFormDefault" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="enableAllTransports" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="endpointName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="endpointURL" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="endpoints" nillable="true" type="ax2610:Map"/>
+               <xs:element minOccurs="0" name="excludeInfo" nillable="true" type="ax2611:ExcludeInfo"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="exposedTransports" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="fileName" nillable="true" type="ax2612:URL"/>
+               <xs:element minOccurs="0" name="importedNamespaces" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="key" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="lastUpdate" type="xs:long"/>
+               <xs:element minOccurs="0" name="lastupdate" type="xs:long"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="messageElementQNameToOperationMap" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="modifyUserWSDLPortAddress" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="modules" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="nameSpacesMap" nillable="true" type="ax2610:Map"/>
+               <xs:element minOccurs="0" name="namespaceMap" nillable="true" type="ax2610:Map"/>
+               <xs:element minOccurs="0" name="objectSupplier" nillable="true" type="ax2589:ObjectSupplier"/>
+               <xs:element minOccurs="0" name="operations" nillable="true" type="ax2610:Iterator"/>
+               <xs:element minOccurs="0" name="operationsNameList" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="p2nMap" nillable="true" type="ax2610:Map"/>
+               <xs:element minOccurs="0" name="parent" nillable="true" type="ax2608:AxisServiceGroup"/>
+               <xs:element minOccurs="0" name="portTypeName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="publishedOperations" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="schema" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="schemaLocationsAdjusted" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="schemaMappingTable" nillable="true" type="ax2610:Map"/>
+               <xs:element minOccurs="0" name="schemaTargetNamespace" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="schemaTargetNamespacePrefix" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="schematargetNamespace" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="schematargetNamespacePrefix" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="scope" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="serviceDescription" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="serviceLifeCycle" nillable="true" type="ax2589:ServiceLifeCycle"/>
+               <xs:element minOccurs="0" name="setEndpointsToAllUsedBindings" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="soapNsUri" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="targetNamespace" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="targetNamespacePrefix" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="typeTable" nillable="true" type="ax2613:TypeTable"/>
+               <xs:element minOccurs="0" name="useDefaultChains" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="useUserWSDL" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="wsdlFound" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="AxisServiceGroup">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="axisDescription" nillable="true" type="ax2589:AxisConfiguration"/>
+               <xs:element minOccurs="0" name="foundWebResources" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="key" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="moduleRefs" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="serviceGroupClassLoader" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="serviceGroupName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="services" nillable="true" type="ax2610:Iterator"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2687="http://xml.config.synapse.apache.org/xsd" xmlns:ax2676="http://constructs.debug.synapse.apache.org/xsd" xmlns:ax2582="http://aspects.synapse.apache.org/xsd" xmlns:ax2583="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd" xmlns:ax2673="http://synapse.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://mediators.synapse.apache.org/xsd">
+         <xs:import namespace="http://aspects.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://synapse.apache.org/xsd"/>
+         <xs:import namespace="http://constructs.debug.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://xml.config.synapse.apache.org/xsd"/>
+         <xs:complexType abstract="true" name="AbstractMediator">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="aspectConfiguration" nillable="true" type="ax2582:AspectConfiguration"/>
+               <xs:element minOccurs="0" name="breakPoint" type="xs:boolean"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="commentsList" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="componentStatisticsId" nillable="true" type="ax2583:ArtifactHolder"/>
+               <xs:element minOccurs="0" name="contentAltering" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="contentAware" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="effectiveTraceState" nillable="true" type="ax2584:MessageContext"/>
+               <xs:element minOccurs="0" name="inputType" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="mediatorName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="mediatorPosition" type="xs:int"/>
+               <xs:element minOccurs="0" name="outputType" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="registeredMediationFlowPoint" nillable="true" type="ax2674:SynapseMediationFlowPoint"/>
+               <xs:element minOccurs="0" name="shortDescription" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="skipEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="statisticsEnable" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="traceState" type="xs:int"/>
+               <xs:element minOccurs="0" name="tracingEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="AbstractListMediator">
+            <xs:complexContent>
+               <xs:extension base="ax2581:AbstractMediator">
+                  <xs:sequence>
+                     <xs:element minOccurs="0" name="contentAware" type="xs:boolean"/>
+                     <xs:element minOccurs="0" name="list" nillable="true" type="xs:anyType"/>
+                     <xs:element minOccurs="0" name="statisticIdForMediators" nillable="true" type="ax2583:ArtifactHolder"/>
+                  </xs:sequence>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+         <xs:complexType name="Value">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="expression" nillable="true" type="ax2687:SynapsePath"/>
+               <xs:element minOccurs="0" name="keyValue" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="namespaces" nillable="true" type="xs:anyType"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://util.java/xsd">
+         <xs:complexType name="Stack">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="Map">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="empty" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="Collection">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="empty" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="Set">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="empty" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="Iterator">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType name="Properties">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType name="Timer">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2654="http://channels.nio.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://net.java/xsd">
+         <xs:import namespace="http://channels.nio.java/xsd"/>
+         <xs:complexType name="URL">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="authority" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="content" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="defaultPort" type="xs:int"/>
+               <xs:element minOccurs="0" name="file" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="host" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="path" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="port" type="xs:int"/>
+               <xs:element minOccurs="0" name="protocol" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="query" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="ref" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="userInfo" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="ServerSocket">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="bound" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="channel" nillable="true" type="ax2654:ServerSocketChannel"/>
+               <xs:element minOccurs="0" name="closed" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="inetAddress" nillable="true" type="ax2572:InetAddress"/>
+               <xs:element minOccurs="0" name="localPort" type="xs:int"/>
+               <xs:element minOccurs="0" name="localSocketAddress" nillable="true" type="ax2572:SocketAddress"/>
+               <xs:element minOccurs="0" name="receiveBufferSize" type="xs:int"/>
+               <xs:element minOccurs="0" name="reuseAddress" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="soTimeout" type="xs:int"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="SocketAddress">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType name="InetAddress">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="MCGlobal" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="MCLinkLocal" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="MCNodeLocal" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="MCOrgLocal" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="MCSiteLocal" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="address" nillable="true" type="xs:base64Binary"/>
+               <xs:element minOccurs="0" name="anyLocalAddress" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="canonicalHostName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="hostAddress" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="hostName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="linkLocalAddress" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="loopbackAddress" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="multicastAddress" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="siteLocalAddress" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2683="http://expr.jaxen.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://jaxen.org/xsd">
+         <xs:import namespace="http://expr.jaxen.org/xsd"/>
+         <xs:complexType name="BaseXPath">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="functionContext" nillable="true" type="ax2681:FunctionContext"/>
+               <xs:element minOccurs="0" name="namespaceContext" nillable="true" type="ax2681:NamespaceContext"/>
+               <xs:element minOccurs="0" name="navigator" nillable="true" type="ax2681:Navigator"/>
+               <xs:element minOccurs="0" name="rootExpr" nillable="true" type="ax2682:Expr"/>
+               <xs:element minOccurs="0" name="variableContext" nillable="true" type="ax2681:VariableContext"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="FunctionContext">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="NamespaceContext">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="Navigator">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="VariableContext">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2614="http://util.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://java2wsdl.description.axis2.apache.org/xsd">
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:complexType name="TypeTable">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="complexSchemaMap" nillable="true" type="ax2614:Map"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2586="http://util.java/xsd" xmlns:ax2588="http://deployers.synapse.apache.org/xsd" xmlns:ax2632="http://registry.synapse.apache.org/xsd" xmlns:ax2635="http://task.synapse.apache.org/xsd" xmlns:ax2625="http://engine.axis2.apache.org/xsd" xmlns:ax2627="http://store.statistics.flow.aspects.synapse.apache.org/xsd" xmlns:ax2629="http://synapse.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://config.synapse.apache.org/xsd">
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:import namespace="http://deployers.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://engine.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://store.statistics.flow.aspects.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://synapse.apache.org/xsd"/>
+         <xs:import namespace="http://registry.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://task.synapse.apache.org/xsd"/>
+         <xs:complexType name="SynapseConfiguration">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="APIs" nillable="true" type="ax2586:Collection"/>
+               <xs:element minOccurs="0" name="allowHotUpdate" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="artifactDeploymentStore" nillable="true" type="ax2587:SynapseArtifactDeploymentStore"/>
+               <xs:element minOccurs="0" name="axisConfiguration" nillable="true" type="ax2589:AxisConfiguration"/>
+               <xs:element minOccurs="0" name="cachedEntries" nillable="true" type="ax2586:Map"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="commentedTextList" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="completedStructureStore" nillable="true" type="ax2626:CompletedStructureStore"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="decryptedCacheMap" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="defaultQName" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="definedEndpoints" nillable="true" type="ax2586:Map"/>
+               <xs:element minOccurs="0" name="definedEntries" nillable="true" type="ax2586:Map"/>
+               <xs:element minOccurs="0" name="definedSequences" nillable="true" type="ax2586:Map"/>
+               <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="endpointTemplates" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="eventSources" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="faultSequence" nillable="true" type="ax2584:Mediator"/>
+               <xs:element minOccurs="0" name="inboundEndpoints" nillable="true" type="ax2586:Collection"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="localRegistry" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="mainSequence" nillable="true" type="ax2584:Mediator"/>
+               <xs:element minOccurs="0" name="mandatorySequence" nillable="true" type="ax2584:Mediator"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="messageProcessors" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="messageStores" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="observers" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="pathToConfigFile" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="priorityExecutors" nillable="true" type="ax2586:Map"/>
+               <xs:element minOccurs="0" name="properties" nillable="true" type="ax2586:Properties"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="proxyServices" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="registry" nillable="true" type="ax2630:Registry"/>
+               <xs:element minOccurs="0" name="sequenceTemplates" nillable="true" type="ax2586:Map"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="startups" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="synapseImports" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="synapseLibraries" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="synapseTimer" nillable="true" type="ax2586:Timer"/>
+               <xs:element minOccurs="0" name="taskManager" nillable="true" type="ax2633:TaskManager"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2576="http://resolver.util.synapse.apache.org/xsd" xmlns:ax2567="http://aspects.synapse.apache.org/xsd" xmlns:ax2579="http://endpoints.synapse.apache.org/xsd" xmlns:ax2689="http://base.mediators.synapse.apache.org/xsd" xmlns:ax2571="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd" xmlns:ax2573="http://net.java/xsd" xmlns:ax2574="http://util.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://axis2.core.synapse.apache.org/xsd">
+         <xs:import namespace="http://aspects.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://net.java/xsd"/>
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:import namespace="http://resolver.util.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://endpoints.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://base.mediators.synapse.apache.org/xsd"/>
+         <xs:complexType name="ProxyService">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="WSDLKey" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="artifactContainerName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="aspectConfiguration" nillable="true" type="ax2566:AspectConfiguration"/>
+               <xs:element minOccurs="0" name="componentStatisticsId" nillable="true" type="ax2571:ArtifactHolder"/>
+               <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="edited" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="filePath" nillable="true" type="ax2572:URL"/>
+               <xs:element minOccurs="0" name="inLineWSDL" nillable="true" type="xs:anyType"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="inMessagePolicies" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="isEdited" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="moduleEngaged" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="outMessagePolicies" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="parameterMap" nillable="true" type="ax2574:Map"/>
+               <xs:element minOccurs="0" name="pinnedServers" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="policies" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="publishWSDLEndpoint" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="resourceMap" nillable="true" type="ax2575:ResourceMap"/>
+               <xs:element minOccurs="0" name="running" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="serviceGroup" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceLevelPolicies" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="startOnLoad" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="targetEndpoint" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="targetFaultSequence" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="targetInLineEndpoint" nillable="true" type="ax2577:Endpoint"/>
+               <xs:element minOccurs="0" name="targetInLineFaultSequence" nillable="true" type="ax2580:SequenceMediator"/>
+               <xs:element minOccurs="0" name="targetInLineInSequence" nillable="true" type="ax2580:SequenceMediator"/>
+               <xs:element minOccurs="0" name="targetInLineOutSequence" nillable="true" type="ax2580:SequenceMediator"/>
+               <xs:element minOccurs="0" name="targetInSequence" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="targetOutSequence" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="transports" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="wsAddrEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="wsRMEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="wsSecEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="wsdlPublished" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="wsdlURI" nillable="true" type="xs:anyURI"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="SynapseCallbackReceiver">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="callbackCount" type="xs:int"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://concurrent.util.java/xsd">
+         <xs:complexType abstract="true" name="ExecutorService">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="shutdown" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="terminated" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2652="http://channels.nio.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://spi.channels.nio.java/xsd">
+         <xs:import namespace="http://channels.nio.java/xsd"/>
+         <xs:complexType abstract="true" name="AbstractInterruptibleChannel">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="open" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="AbstractSelectableChannel">
+            <xs:complexContent>
+               <xs:extension base="ax2652:SelectableChannel">
+                  <xs:sequence>
+                     <xs:element minOccurs="0" name="blocking" type="xs:boolean"/>
+                     <xs:element minOccurs="0" name="registered" type="xs:boolean"/>
+                  </xs:sequence>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://store.statistics.flow.aspects.synapse.apache.org/xsd">
+         <xs:complexType name="CompletedStructureStore">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="completedStructureEntries" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="empty" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="MessageDataStore">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://threadpool.util.axis2.apache.org/xsd">
+         <xs:complexType abstract="true" name="ThreadFactory">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2597="http://util.java/xsd" xmlns:ax2600="http://management.clustering.axis2.apache.org/xsd" xmlns:ax2604="http://state.clustering.axis2.apache.org/xsd" xmlns:ax2596="http://context.axis2.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://clustering.axis2.apache.org/xsd">
+         <xs:import namespace="http://context.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:import namespace="http://management.clustering.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://state.clustering.axis2.apache.org/xsd"/>
+         <xs:complexType abstract="true" name="ClusteringAgent">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="aliveMemberCount" type="xs:int"/>
+               <xs:element minOccurs="0" name="configurationContext" nillable="true" type="ax2591:ConfigurationContext"/>
+               <xs:element minOccurs="0" name="coordinator" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="domains" nillable="true" type="ax2569:Set"/>
+               <xs:element minOccurs="0" name="members" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="nodeManager" nillable="true" type="ax2600:NodeManager"/>
+               <xs:element minOccurs="0" name="stateManager" nillable="true" type="ax2601:StateManager"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2631="http://util.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://registry.synapse.apache.org/xsd">
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:complexType abstract="true" name="Registry">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configurationProperties" nillable="true" type="ax2569:Properties"/>
+               <xs:element minOccurs="0" name="providerClass" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2686="http://xpath.om.axiom.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xml.config.synapse.apache.org/xsd">
+         <xs:import namespace="http://xpath.om.axiom.apache.org/xsd"/>
+         <xs:complexType abstract="true" name="SynapsePath">
+            <xs:complexContent>
+               <xs:extension base="ax2686:AXIOMXPath">
+                  <xs:sequence>
+                     <xs:element minOccurs="0" name="contentAware" type="xs:boolean"/>
+                     <xs:element minOccurs="0" name="expression" nillable="true" type="xs:string"/>
+                     <xs:element minOccurs="0" name="pathType" nillable="true" type="xs:string"/>
+                  </xs:sequence>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2599="http://context.axis2.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://management.clustering.axis2.apache.org/xsd">
+         <xs:import namespace="http://context.axis2.apache.org/xsd"/>
+         <xs:complexType abstract="true" name="NodeManager">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configurationContext" nillable="true" type="ax2599:ConfigurationContext"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://proxyadmin.carbon.wso2.org/xsd">
+         <xs:complexType name="ProxyAdminException">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType name="ProxyData">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="artifactContainerName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="enableSecurity" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="enableStatistics" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="enableTracing" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="endpointKey" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="endpointXML" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="faultSeqKey" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="faultSeqXML" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="inSeqKey" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="inSeqXML" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="isEdited" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="outSeqKey" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="outSeqXML" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="pinnedServers" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="policies" nillable="true" type="ax2563:ProxyServicePolicyInfo"/>
+               <xs:element minOccurs="0" name="publishWSDLEndpoint" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="running" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="serviceGroup" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="serviceParams" nillable="true" type="ax2563:Entry"/>
+               <xs:element minOccurs="0" name="startOnLoad" type="xs:boolean"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="transports" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="wsdlAvailable" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="wsdlDef" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="wsdlKey" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="wsdlResources" nillable="true" type="ax2563:Entry"/>
+               <xs:element minOccurs="0" name="wsdlURI" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="ProxyServicePolicyInfo">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="key" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="operationNS" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="operationName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="Entry">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="key" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="MetaData">
+            <xs:sequence>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="endpoints" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="endpointsAvailable" type="xs:boolean"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="sequences" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="sequencesAvailable" type="xs:boolean"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="transports" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="transportsAvailable" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2616="http://description.axis2.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://util.deployment.axis2.apache.org/xsd">
+         <xs:import namespace="http://description.axis2.apache.org/xsd"/>
+         <xs:complexType name="PhasesInfo">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="INPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="IN_FaultPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="OUTPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="OUT_FaultPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="globalInFaultPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="globalInflow" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="globalOutPhaseList" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="operationInFaultPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="operationInPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="operationOutFaultPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="operationOutPhases" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="operationPhases" nillable="true" type="ax2616:AxisOperation"/>
+               <xs:element minOccurs="0" name="outFaultPhaseList" nillable="true" type="xs:anyType"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="ExcludeInfo">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2642="http://soap.axiom.apache.org/xsd" xmlns:ax2658="http://debug.synapse.apache.org/xsd" xmlns:ax2647="http://axis2.core.synapse.apache.org/xsd" xmlns:ax2636="http://config.synapse.apache.org/xsd" xmlns:ax2637="http://util.java/xsd" xmlns:ax2628="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd" xmlns:ax2670="http://addressing.axis2.apache.org/xsd" xmlns:ax2660="http://core.synapse.apache.org/xsd" xmlns:ax2672="http://logging.commons.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://synapse.apache.org/xsd">
+         <xs:import namespace="http://artifact.data.statistics.flow.aspects.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://config.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:import namespace="http://soap.axiom.apache.org/xsd"/>
+         <xs:import namespace="http://axis2.core.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://debug.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://core.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://addressing.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://logging.commons.apache.org/xsd"/>
+         <xs:complexType abstract="true" name="MessageContext">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="SOAP11" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="WSAAction" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="WSAMessageID" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="configuration" nillable="true" type="ax2585:SynapseConfiguration"/>
+               <xs:element minOccurs="0" name="contextEntries" nillable="true" type="ax2569:Map"/>
+               <xs:element minOccurs="0" name="continuationEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="continuationStateStack" nillable="true" type="ax2569:Stack"/>
+               <xs:element minOccurs="0" name="doingGET" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="doingMTOM" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="doingPOX" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="doingSWA" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="envelope" nillable="true" type="ax2642:SOAPEnvelope"/>
+               <xs:element minOccurs="0" name="environment" nillable="true" type="ax2660:SynapseEnvironment"/>
+               <xs:element minOccurs="0" name="faultResponse" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="faultSequence" nillable="true" type="ax2584:Mediator"/>
+               <xs:element minOccurs="0" name="faultStack" nillable="true" type="ax2569:Stack"/>
+               <xs:element minOccurs="0" name="faultTo" nillable="true" type="ax2668:EndpointReference"/>
+               <xs:element minOccurs="0" name="from" nillable="true" type="ax2668:EndpointReference"/>
+               <xs:element minOccurs="0" name="mainSequence" nillable="true" type="ax2584:Mediator"/>
+               <xs:element minOccurs="0" name="messageFlowTracingState" type="xs:int"/>
+               <xs:element minOccurs="0" name="messageID" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="messageString" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="propertyKeySet" nillable="true" type="ax2569:Set"/>
+               <xs:element minOccurs="0" name="relatesTo" nillable="true" type="ax2668:RelatesTo"/>
+               <xs:element minOccurs="0" name="replyTo" nillable="true" type="ax2668:EndpointReference"/>
+               <xs:element minOccurs="0" name="response" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="serviceLog" nillable="true" type="ax2671:Log"/>
+               <xs:element minOccurs="0" name="soapAction" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="to" nillable="true" type="ax2668:EndpointReference"/>
+               <xs:element minOccurs="0" name="tracingState" type="xs:int"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="Mediator">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="componentStatisticsId" nillable="true" type="ax2568:ArtifactHolder"/>
+               <xs:element minOccurs="0" name="contentAltering" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="contentAware" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="mediatorName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="mediatorPosition" type="xs:int"/>
+               <xs:element minOccurs="0" name="shortDescription" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="traceState" type="xs:int"/>
+               <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="ServerContextInformation">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="callbackCount" type="xs:int"/>
+               <xs:element minOccurs="0" name="serverConfigurationInformation" nillable="true" type="ax2584:ServerConfigurationInformation"/>
+               <xs:element minOccurs="0" name="serverContext" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="serverDebugModeEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="serverState" nillable="true" type="ax2584:ServerState"/>
+               <xs:element minOccurs="0" name="synapseCallbackReceiver" nillable="true" type="ax2565:SynapseCallbackReceiver"/>
+               <xs:element minOccurs="0" name="synapseConfiguration" nillable="true" type="ax2585:SynapseConfiguration"/>
+               <xs:element minOccurs="0" name="synapseDebugInterface" nillable="true" type="ax2658:SynapseDebugInterface"/>
+               <xs:element minOccurs="0" name="synapseDebugManager" nillable="true" type="ax2658:SynapseDebugManager"/>
+               <xs:element minOccurs="0" name="synapseEnvironment" nillable="true" type="ax2660:SynapseEnvironment"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="ServerConfigurationInformation">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="axis2RepoLocation" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="axis2Xml" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="createNewInstance" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="deploymentMode" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="hostName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="ipAddress" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="resolveRoot" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="serverControllerProvider" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="serverName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="synapseHome" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="synapseXMLLocation" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="ServerState">
+            <xs:complexContent>
+               <xs:extension base="xs:Enum">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+         <xs:complexType name="SequenceType">
+            <xs:complexContent>
+               <xs:extension base="xs:Enum">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://io.java/xsd">
+         <xs:complexType abstract="true" name="Reader">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType name="BufferedReader">
+            <xs:complexContent>
+               <xs:extension base="ax2656:Reader">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="Writer">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType name="PrintWriter">
+            <xs:complexContent>
+               <xs:extension base="ax2656:Writer">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2663="http://debug.synapse.apache.org/xsd" xmlns:ax2664="http://task.synapse.apache.org/xsd" xmlns:ax2666="http://carbonext.synapse.apache.org/xsd" xmlns:ax2667="http://util.java/xsd" xmlns:ax2645="http://concurrent.util.java/xsd" xmlns:ax2646="http://store.statistics.flow.aspects.synapse.apache.org/xsd" xmlns:ax2661="http://synapse.apache.org/xsd" xmlns:ax2662="http://config.synapse.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://core.synapse.apache.org/xsd">
+         <xs:import namespace="http://concurrent.util.java/xsd"/>
+         <xs:import namespace="http://store.statistics.flow.aspects.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://synapse.apache.org/xsd"/>
+         <xs:import namespace="http://config.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://debug.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://task.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://carbonext.synapse.apache.org/xsd"/>
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:complexType abstract="true" name="SynapseEnvironment">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="continuationEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="debuggerEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="executorService" nillable="true" type="ax2644:ExecutorService"/>
+               <xs:element minOccurs="0" name="globalTimeout" type="xs:long"/>
+               <xs:element minOccurs="0" name="initialized" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="messageDataStore" nillable="true" type="ax2626:MessageDataStore"/>
+               <xs:element minOccurs="0" name="serverContextInformation" nillable="true" type="ax2584:ServerContextInformation"/>
+               <xs:element minOccurs="0" name="synapseConfiguration" nillable="true" type="ax2585:SynapseConfiguration"/>
+               <xs:element minOccurs="0" name="synapseDebugManager" nillable="true" type="ax2663:SynapseDebugManager"/>
+               <xs:element minOccurs="0" name="synapseHandlers" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="taskManager" nillable="true" type="ax2664:SynapseTaskManager"/>
+               <xs:element minOccurs="0" name="tenantInfoConfigurator" nillable="true" type="ax2665:TenantInfoConfigurator"/>
+               <xs:element minOccurs="0" name="xpathFunctionExtensions" nillable="true" type="ax2667:Map"/>
+               <xs:element minOccurs="0" name="xpathVariableExtensions" nillable="true" type="ax2667:Map"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://logging.commons.apache.org/xsd">
+         <xs:complexType abstract="true" name="Log">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="debugEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="errorEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="fatalEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="infoEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="traceEnabled" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="warnEnabled" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2641="http://util.java/xsd" xmlns:ax2640="http://om.axiom.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.axiom.apache.org/xsd">
+         <xs:import namespace="http://om.axiom.apache.org/xsd"/>
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:complexType abstract="true" name="SOAPEnvelope">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="SOAPBodyFirstElementLocalName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="SOAPBodyFirstElementNS" nillable="true" type="ax2640:OMNamespace"/>
+               <xs:element minOccurs="0" name="body" nillable="true" type="ax2638:SOAPBody"/>
+               <xs:element minOccurs="0" name="header" nillable="true" type="ax2638:SOAPHeader"/>
+               <xs:element minOccurs="0" name="version" nillable="true" type="ax2638:SOAPVersion"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="SOAPBody">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="fault" nillable="true" type="ax2638:SOAPFault"/>
+               <xs:element minOccurs="0" name="firstElementLocalName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="firstElementNS" nillable="true" type="ax2640:OMNamespace"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="SOAPFault">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="code" nillable="true" type="ax2638:SOAPFaultCode"/>
+               <xs:element minOccurs="0" name="detail" nillable="true" type="ax2638:SOAPFaultDetail"/>
+               <xs:element minOccurs="0" name="exception" nillable="true"/>
+               <xs:element minOccurs="0" name="node" nillable="true" type="ax2638:SOAPFaultNode"/>
+               <xs:element minOccurs="0" name="reason" nillable="true" type="ax2638:SOAPFaultReason"/>
+               <xs:element minOccurs="0" name="role" nillable="true" type="ax2638:SOAPFaultRole"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="SOAPFaultCode">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="SOAPFaultDetail">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="allDetailEntries" nillable="true" type="ax2641:Iterator"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="SOAPFaultNode">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="nodeValue" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="SOAPFaultReason">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="allSoapTexts" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="firstSOAPText" nillable="true" type="ax2638:SOAPFaultText"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="SOAPFaultText">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="lang" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="SOAPFaultRole">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="roleValue" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="SOAPHeader">
+            <xs:sequence/>
+         </xs:complexType>
+         <xs:complexType abstract="true" name="SOAPVersion">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="encodingURI" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="envelopeURI" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="faultCodeQName" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="faultDetailQName" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="faultReasonQName" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="faultRoleQName" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="mustUnderstandFaultCode" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="nextRoleURI" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="receiverFaultCode" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="roleAttributeQName" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="senderFaultCode" nillable="true" type="xs:anyType"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://carbonext.synapse.apache.org/xsd">
+         <xs:complexType abstract="true" name="TenantInfoConfigurator">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2655="http://net.java/xsd" xmlns:ax2657="http://io.java/xsd" xmlns:ax2659="http://synapse.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://debug.synapse.apache.org/xsd">
+         <xs:import namespace="http://net.java/xsd"/>
+         <xs:import namespace="http://io.java/xsd"/>
+         <xs:import namespace="http://synapse.apache.org/xsd"/>
+         <xs:complexType name="SynapseDebugInterface">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="openedPortListen" nillable="true" type="ax2655:ServerSocket"/>
+               <xs:element minOccurs="0" name="openedPortSend" nillable="true" type="ax2655:ServerSocket"/>
+               <xs:element minOccurs="0" name="portListenReader" nillable="true" type="ax2656:BufferedReader"/>
+               <xs:element minOccurs="0" name="portListenWriter" nillable="true" type="ax2656:PrintWriter"/>
+               <xs:element minOccurs="0" name="portSendWriter" nillable="true" type="ax2656:PrintWriter"/>
+               <xs:element minOccurs="0" name="uncaughtException" nillable="true"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="SynapseDebugManager">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="messageContext" nillable="true" type="ax2584:MessageContext"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://transaction.axis2.apache.org/xsd">
+         <xs:complexType name="TransactionConfiguration">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="transactionManager" nillable="true" type="xs:anyType"/>
+               <xs:element minOccurs="0" name="transactionTimeout" type="xs:int"/>
+               <xs:element minOccurs="0" name="userTransaction" nillable="true" type="xs:anyType"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2602="http://context.axis2.apache.org/xsd" xmlns:ax2603="http://util.java/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://state.clustering.axis2.apache.org/xsd">
+         <xs:import namespace="http://context.axis2.apache.org/xsd"/>
+         <xs:import namespace="http://util.java/xsd"/>
+         <xs:complexType abstract="true" name="StateManager">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="configurationContext" nillable="true" type="ax2602:ConfigurationContext"/>
+               <xs:element minOccurs="0" name="replicationExcludePatterns" nillable="true" type="ax2569:Map"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2675="http://synapse.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://constructs.debug.synapse.apache.org/xsd">
+         <xs:import namespace="http://synapse.apache.org/xsd"/>
+         <xs:complexType name="SynapseMediationFlowPoint">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="key" nillable="true" type="xs:string"/>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="mediatorPosition" nillable="true" type="xs:int"/>
+               <xs:element minOccurs="0" name="mediatorReference" nillable="true" type="ax2584:Mediator"/>
+               <xs:element minOccurs="0" name="synapseMediationComponent" nillable="true" type="ax2674:SynapseMediationComponent"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:complexType name="SynapseMediationComponent">
+            <xs:complexContent>
+               <xs:extension base="xs:Enum">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:ax2564="http://proxyadmin.carbon.wso2.org/xsd" xmlns:ax2690="http://axis2.core.synapse.apache.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://org.apache.synapse/xsd">
+         <xs:import namespace="http://proxyadmin.carbon.wso2.org/xsd"/>
+         <xs:import namespace="http://axis2.core.synapse.apache.org/xsd"/>
+         <xs:element name="ProxyServiceAdminProxyAdminException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="ProxyAdminException" nillable="true" type="ax2564:ProxyAdminException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="enableTracing">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="proxyName" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="enableTracingResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="disableTracing">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="proxyName" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="disableTracingResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteProxyService">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="proxyName" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteProxyServiceResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAvailableTransports">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAvailableTransportsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAvailableSequences">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAvailableSequencesResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAvailableEndpoints">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAvailableEndpointsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="startProxyService">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="proxyName" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="startProxyServiceResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="stopProxyService">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="proxyName" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="stopProxyServiceResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="redeployProxyService">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="proxyName" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="redeployProxyServiceResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getSourceView">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="pd" nillable="true" type="ax2564:ProxyData"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getSourceViewResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addProxy">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="pd" nillable="true" type="ax2564:ProxyData"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addProxyResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="modifyProxy">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="pd" nillable="true" type="ax2564:ProxyData"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="modifyProxyResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="persistProxyService">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="proxy" nillable="true" type="ax2690:ProxyService"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="disableStatistics">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="proxyName" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="disableStatisticsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="enableStatistics">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="proxyName" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="enableStatisticsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getProxy">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="proxyName" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getProxyResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="ax2564:ProxyData"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getEndpoint">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getEndpointResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getMetaData">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getMetaDataResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="ax2564:MetaData"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://securevault.wso2.org/xsd">
+         <xs:complexType name="SecretResolver">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="initialized" type="xs:boolean"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://om.axiom.apache.org/xsd">
+         <xs:complexType abstract="true" name="OMNamespace">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="namespaceURI" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="prefix" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://resolver.util.synapse.apache.org/xsd">
+         <xs:complexType name="ResourceMap">
+            <xs:sequence>
+               <xs:element maxOccurs="unbounded" minOccurs="0" name="resources" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="getAvailableEndpointsRequest">
+      <wsdl:part name="parameters" element="ns:getAvailableEndpoints"/>
+   </wsdl:message>
+   <wsdl:message name="getAvailableEndpointsResponse">
+      <wsdl:part name="parameters" element="ns:getAvailableEndpointsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="ProxyServiceAdminProxyAdminException">
+      <wsdl:part name="parameters" element="ns:ProxyServiceAdminProxyAdminException"/>
+   </wsdl:message>
+   <wsdl:message name="enableTracingRequest">
+      <wsdl:part name="parameters" element="ns:enableTracing"/>
+   </wsdl:message>
+   <wsdl:message name="enableTracingResponse">
+      <wsdl:part name="parameters" element="ns:enableTracingResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getProxyRequest">
+      <wsdl:part name="parameters" element="ns:getProxy"/>
+   </wsdl:message>
+   <wsdl:message name="getProxyResponse">
+      <wsdl:part name="parameters" element="ns:getProxyResponse"/>
+   </wsdl:message>
+   <wsdl:message name="enableStatisticsRequest">
+      <wsdl:part name="parameters" element="ns:enableStatistics"/>
+   </wsdl:message>
+   <wsdl:message name="enableStatisticsResponse">
+      <wsdl:part name="parameters" element="ns:enableStatisticsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="disableStatisticsRequest">
+      <wsdl:part name="parameters" element="ns:disableStatistics"/>
+   </wsdl:message>
+   <wsdl:message name="disableStatisticsResponse">
+      <wsdl:part name="parameters" element="ns:disableStatisticsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getEndpointRequest">
+      <wsdl:part name="parameters" element="ns:getEndpoint"/>
+   </wsdl:message>
+   <wsdl:message name="getEndpointResponse">
+      <wsdl:part name="parameters" element="ns:getEndpointResponse"/>
+   </wsdl:message>
+   <wsdl:message name="stopProxyServiceRequest">
+      <wsdl:part name="parameters" element="ns:stopProxyService"/>
+   </wsdl:message>
+   <wsdl:message name="stopProxyServiceResponse">
+      <wsdl:part name="parameters" element="ns:stopProxyServiceResponse"/>
+   </wsdl:message>
+   <wsdl:message name="deleteProxyServiceRequest">
+      <wsdl:part name="parameters" element="ns:deleteProxyService"/>
+   </wsdl:message>
+   <wsdl:message name="deleteProxyServiceResponse">
+      <wsdl:part name="parameters" element="ns:deleteProxyServiceResponse"/>
+   </wsdl:message>
+   <wsdl:message name="persistProxyServiceRequest">
+      <wsdl:part name="parameters" element="ns:persistProxyService"/>
+   </wsdl:message>
+   <wsdl:message name="getAvailableSequencesRequest">
+      <wsdl:part name="parameters" element="ns:getAvailableSequences"/>
+   </wsdl:message>
+   <wsdl:message name="getAvailableSequencesResponse">
+      <wsdl:part name="parameters" element="ns:getAvailableSequencesResponse"/>
+   </wsdl:message>
+   <wsdl:message name="addProxyRequest">
+      <wsdl:part name="parameters" element="ns:addProxy"/>
+   </wsdl:message>
+   <wsdl:message name="addProxyResponse">
+      <wsdl:part name="parameters" element="ns:addProxyResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getSourceViewRequest">
+      <wsdl:part name="parameters" element="ns:getSourceView"/>
+   </wsdl:message>
+   <wsdl:message name="getSourceViewResponse">
+      <wsdl:part name="parameters" element="ns:getSourceViewResponse"/>
+   </wsdl:message>
+   <wsdl:message name="modifyProxyRequest">
+      <wsdl:part name="parameters" element="ns:modifyProxy"/>
+   </wsdl:message>
+   <wsdl:message name="modifyProxyResponse">
+      <wsdl:part name="parameters" element="ns:modifyProxyResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getAvailableTransportsRequest">
+      <wsdl:part name="parameters" element="ns:getAvailableTransports"/>
+   </wsdl:message>
+   <wsdl:message name="getAvailableTransportsResponse">
+      <wsdl:part name="parameters" element="ns:getAvailableTransportsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="startProxyServiceRequest">
+      <wsdl:part name="parameters" element="ns:startProxyService"/>
+   </wsdl:message>
+   <wsdl:message name="startProxyServiceResponse">
+      <wsdl:part name="parameters" element="ns:startProxyServiceResponse"/>
+   </wsdl:message>
+   <wsdl:message name="redeployProxyServiceRequest">
+      <wsdl:part name="parameters" element="ns:redeployProxyService"/>
+   </wsdl:message>
+   <wsdl:message name="redeployProxyServiceResponse">
+      <wsdl:part name="parameters" element="ns:redeployProxyServiceResponse"/>
+   </wsdl:message>
+   <wsdl:message name="disableTracingRequest">
+      <wsdl:part name="parameters" element="ns:disableTracing"/>
+   </wsdl:message>
+   <wsdl:message name="disableTracingResponse">
+      <wsdl:part name="parameters" element="ns:disableTracingResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getMetaDataRequest">
+      <wsdl:part name="parameters" element="ns:getMetaData"/>
+   </wsdl:message>
+   <wsdl:message name="getMetaDataResponse">
+      <wsdl:part name="parameters" element="ns:getMetaDataResponse"/>
+   </wsdl:message>
+   <wsdl:portType name="ProxyServiceAdminPortType">
+      <wsdl:operation name="getAvailableEndpoints">
+         <wsdl:input message="tns:getAvailableEndpointsRequest" wsaw:Action="urn:getAvailableEndpoints"/>
+         <wsdl:output message="tns:getAvailableEndpointsResponse" wsaw:Action="urn:getAvailableEndpointsResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:getAvailableEndpointsProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="enableTracing">
+         <wsdl:input message="tns:enableTracingRequest" wsaw:Action="urn:enableTracing"/>
+         <wsdl:output message="tns:enableTracingResponse" wsaw:Action="urn:enableTracingResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:enableTracingProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getProxy">
+         <wsdl:input message="tns:getProxyRequest" wsaw:Action="urn:getProxy"/>
+         <wsdl:output message="tns:getProxyResponse" wsaw:Action="urn:getProxyResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:getProxyProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="enableStatistics">
+         <wsdl:input message="tns:enableStatisticsRequest" wsaw:Action="urn:enableStatistics"/>
+         <wsdl:output message="tns:enableStatisticsResponse" wsaw:Action="urn:enableStatisticsResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:enableStatisticsProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="disableStatistics">
+         <wsdl:input message="tns:disableStatisticsRequest" wsaw:Action="urn:disableStatistics"/>
+         <wsdl:output message="tns:disableStatisticsResponse" wsaw:Action="urn:disableStatisticsResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:disableStatisticsProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getEndpoint">
+         <wsdl:input message="tns:getEndpointRequest" wsaw:Action="urn:getEndpoint"/>
+         <wsdl:output message="tns:getEndpointResponse" wsaw:Action="urn:getEndpointResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:getEndpointProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="stopProxyService">
+         <wsdl:input message="tns:stopProxyServiceRequest" wsaw:Action="urn:stopProxyService"/>
+         <wsdl:output message="tns:stopProxyServiceResponse" wsaw:Action="urn:stopProxyServiceResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:stopProxyServiceProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="deleteProxyService">
+         <wsdl:input message="tns:deleteProxyServiceRequest" wsaw:Action="urn:deleteProxyService"/>
+         <wsdl:output message="tns:deleteProxyServiceResponse" wsaw:Action="urn:deleteProxyServiceResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:deleteProxyServiceProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="persistProxyService">
+         <wsdl:input message="tns:persistProxyServiceRequest" wsaw:Action="urn:persistProxyService"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:persistProxyServiceProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getAvailableSequences">
+         <wsdl:input message="tns:getAvailableSequencesRequest" wsaw:Action="urn:getAvailableSequences"/>
+         <wsdl:output message="tns:getAvailableSequencesResponse" wsaw:Action="urn:getAvailableSequencesResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:getAvailableSequencesProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="addProxy">
+         <wsdl:input message="tns:addProxyRequest" wsaw:Action="urn:addProxy"/>
+         <wsdl:output message="tns:addProxyResponse" wsaw:Action="urn:addProxyResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:addProxyProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getSourceView">
+         <wsdl:input message="tns:getSourceViewRequest" wsaw:Action="urn:getSourceView"/>
+         <wsdl:output message="tns:getSourceViewResponse" wsaw:Action="urn:getSourceViewResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:getSourceViewProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="modifyProxy">
+         <wsdl:input message="tns:modifyProxyRequest" wsaw:Action="urn:modifyProxy"/>
+         <wsdl:output message="tns:modifyProxyResponse" wsaw:Action="urn:modifyProxyResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:modifyProxyProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getAvailableTransports">
+         <wsdl:input message="tns:getAvailableTransportsRequest" wsaw:Action="urn:getAvailableTransports"/>
+         <wsdl:output message="tns:getAvailableTransportsResponse" wsaw:Action="urn:getAvailableTransportsResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:getAvailableTransportsProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="startProxyService">
+         <wsdl:input message="tns:startProxyServiceRequest" wsaw:Action="urn:startProxyService"/>
+         <wsdl:output message="tns:startProxyServiceResponse" wsaw:Action="urn:startProxyServiceResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:startProxyServiceProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="redeployProxyService">
+         <wsdl:input message="tns:redeployProxyServiceRequest" wsaw:Action="urn:redeployProxyService"/>
+         <wsdl:output message="tns:redeployProxyServiceResponse" wsaw:Action="urn:redeployProxyServiceResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:redeployProxyServiceProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="disableTracing">
+         <wsdl:input message="tns:disableTracingRequest" wsaw:Action="urn:disableTracing"/>
+         <wsdl:output message="tns:disableTracingResponse" wsaw:Action="urn:disableTracingResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:disableTracingProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getMetaData">
+         <wsdl:input message="tns:getMetaDataRequest" wsaw:Action="urn:getMetaData"/>
+         <wsdl:output message="tns:getMetaDataResponse" wsaw:Action="urn:getMetaDataResponse"/>
+         <wsdl:fault message="tns:ProxyServiceAdminProxyAdminException" name="ProxyServiceAdminProxyAdminException" wsaw:Action="urn:getMetaDataProxyServiceAdminProxyAdminException"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="ProxyServiceAdminSoap11Binding" type="tns:ProxyServiceAdminPortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getAvailableEndpoints">
+         <soap:operation soapAction="urn:getAvailableEndpoints" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="enableTracing">
+         <soap:operation soapAction="urn:enableTracing" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getProxy">
+         <soap:operation soapAction="urn:getProxy" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="enableStatistics">
+         <soap:operation soapAction="urn:enableStatistics" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="disableStatistics">
+         <soap:operation soapAction="urn:disableStatistics" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getEndpoint">
+         <soap:operation soapAction="urn:getEndpoint" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="stopProxyService">
+         <soap:operation soapAction="urn:stopProxyService" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteProxyService">
+         <soap:operation soapAction="urn:deleteProxyService" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="persistProxyService">
+         <soap:operation soapAction="urn:persistProxyService" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAvailableSequences">
+         <soap:operation soapAction="urn:getAvailableSequences" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addProxy">
+         <soap:operation soapAction="urn:addProxy" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getSourceView">
+         <soap:operation soapAction="urn:getSourceView" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="modifyProxy">
+         <soap:operation soapAction="urn:modifyProxy" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAvailableTransports">
+         <soap:operation soapAction="urn:getAvailableTransports" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="startProxyService">
+         <soap:operation soapAction="urn:startProxyService" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="redeployProxyService">
+         <soap:operation soapAction="urn:redeployProxyService" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="disableTracing">
+         <soap:operation soapAction="urn:disableTracing" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getMetaData">
+         <soap:operation soapAction="urn:getMetaData" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="ProxyServiceAdminSoap12Binding" type="tns:ProxyServiceAdminPortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getAvailableEndpoints">
+         <soap12:operation soapAction="urn:getAvailableEndpoints" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="enableTracing">
+         <soap12:operation soapAction="urn:enableTracing" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getProxy">
+         <soap12:operation soapAction="urn:getProxy" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="enableStatistics">
+         <soap12:operation soapAction="urn:enableStatistics" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="disableStatistics">
+         <soap12:operation soapAction="urn:disableStatistics" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getEndpoint">
+         <soap12:operation soapAction="urn:getEndpoint" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="stopProxyService">
+         <soap12:operation soapAction="urn:stopProxyService" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteProxyService">
+         <soap12:operation soapAction="urn:deleteProxyService" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="persistProxyService">
+         <soap12:operation soapAction="urn:persistProxyService" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAvailableSequences">
+         <soap12:operation soapAction="urn:getAvailableSequences" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addProxy">
+         <soap12:operation soapAction="urn:addProxy" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getSourceView">
+         <soap12:operation soapAction="urn:getSourceView" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="modifyProxy">
+         <soap12:operation soapAction="urn:modifyProxy" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAvailableTransports">
+         <soap12:operation soapAction="urn:getAvailableTransports" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="startProxyService">
+         <soap12:operation soapAction="urn:startProxyService" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="redeployProxyService">
+         <soap12:operation soapAction="urn:redeployProxyService" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="disableTracing">
+         <soap12:operation soapAction="urn:disableTracing" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getMetaData">
+         <soap12:operation soapAction="urn:getMetaData" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="ProxyServiceAdminProxyAdminException">
+            <soap12:fault use="literal" name="ProxyServiceAdminProxyAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="ProxyServiceAdminHttpBinding" type="tns:ProxyServiceAdminPortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="getAvailableEndpoints">
+         <http:operation location="getAvailableEndpoints"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="enableTracing">
+         <http:operation location="enableTracing"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getProxy">
+         <http:operation location="getProxy"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="enableStatistics">
+         <http:operation location="enableStatistics"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="disableStatistics">
+         <http:operation location="disableStatistics"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getEndpoint">
+         <http:operation location="getEndpoint"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="stopProxyService">
+         <http:operation location="stopProxyService"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteProxyService">
+         <http:operation location="deleteProxyService"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="persistProxyService">
+         <http:operation location="persistProxyService"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+      </wsdl:operation>
+      <wsdl:operation name="getAvailableSequences">
+         <http:operation location="getAvailableSequences"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="addProxy">
+         <http:operation location="addProxy"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getSourceView">
+         <http:operation location="getSourceView"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="modifyProxy">
+         <http:operation location="modifyProxy"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getAvailableTransports">
+         <http:operation location="getAvailableTransports"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="startProxyService">
+         <http:operation location="startProxyService"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="redeployProxyService">
+         <http:operation location="redeployProxyService"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="disableTracing">
+         <http:operation location="disableTracing"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getMetaData">
+         <http:operation location="getMetaData"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="ProxyServiceAdmin">
+      <wsdl:port name="ProxyServiceAdminHttpsSoap11Endpoint" binding="tns:ProxyServiceAdminSoap11Binding">
+         <soap:address location="https://10.16.118.52:9443/services/ProxyServiceAdmin.ProxyServiceAdminHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="ProxyServiceAdminHttpsSoap12Endpoint" binding="tns:ProxyServiceAdminSoap12Binding">
+         <soap12:address location="https://10.16.118.52:9443/services/ProxyServiceAdmin.ProxyServiceAdminHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="ProxyServiceAdminHttpsEndpoint" binding="tns:ProxyServiceAdminHttpBinding">
+         <http:address location="https://10.16.118.52:9443/services/ProxyServiceAdmin.ProxyServiceAdminHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,633 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ax2521="http://dos.localentry.carbon.wso2.org/xsd" xmlns:ax2523="http://mgt.dependency.mediation.carbon.wso2.org/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://service.localentry.carbon.wso2.org" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax2519="http://localentry.carbon.wso2.org/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://service.localentry.carbon.wso2.org">
+   <wsdl:documentation>LocalEntryAdmin</wsdl:documentation>
+   <wsdl:types>
+      <xs:schema xmlns:ax2520="http://localentry.carbon.wso2.org/xsd" xmlns:ax2522="http://dos.localentry.carbon.wso2.org/xsd" xmlns:ax2524="http://mgt.dependency.mediation.carbon.wso2.org/xsd" xmlns:ns="http://org.apache.axis2/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://org.apache.axis2/xsd">
+         <xs:import namespace="http://localentry.carbon.wso2.org/xsd"/>
+         <xs:import namespace="http://dos.localentry.carbon.wso2.org/xsd"/>
+         <xs:import namespace="http://mgt.dependency.mediation.carbon.wso2.org/xsd"/>
+         <xs:element name="LocalEntryAdminLocalEntryAdminException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="LocalEntryAdminException" nillable="true" type="ax2520:LocalEntryAdminException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="entryData">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="entryDataResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax2521:EntryData"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="paginatedEntryData">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="pageNumber" type="xs:int"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="paginatedEntryDataResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax2521:EntryData"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getEntryDataCount">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getEntryDataCountResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:int"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getEntryNames">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getEntryNamesResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getEntryNamesString">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getEntryNamesStringResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="saveEntry">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="ele" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="saveEntryResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteEntry">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="entryKey" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteEntryResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getDependents">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="entryName" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getDependentsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax2523:ConfigurationObject"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addEntry">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="ele" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addEntryResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getEntry">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="entryKey" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getEntryResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" nillable="true" type="xs:anyType"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://mgt.dependency.mediation.carbon.wso2.org/xsd">
+         <xs:complexType name="ConfigurationObject">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="type" type="xs:int"/>
+               <xs:element minOccurs="0" name="typeName" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://localentry.carbon.wso2.org/xsd">
+         <xs:complexType name="LocalEntryAdminException">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://dos.localentry.carbon.wso2.org/xsd">
+         <xs:complexType name="EntryData">
+            <xs:sequence>
+               <xs:element minOccurs="0" name="artifactContainerName" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="isEdited" type="xs:boolean"/>
+               <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+               <xs:element minOccurs="0" name="value" nillable="true" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="getEntryNamesStringRequest">
+      <wsdl:part name="parameters" element="ns1:getEntryNamesString"/>
+   </wsdl:message>
+   <wsdl:message name="getEntryNamesStringResponse">
+      <wsdl:part name="parameters" element="ns1:getEntryNamesStringResponse"/>
+   </wsdl:message>
+   <wsdl:message name="LocalEntryAdminLocalEntryAdminException">
+      <wsdl:part name="parameters" element="ns1:LocalEntryAdminLocalEntryAdminException"/>
+   </wsdl:message>
+   <wsdl:message name="addEntryRequest">
+      <wsdl:part name="parameters" element="ns1:addEntry"/>
+   </wsdl:message>
+   <wsdl:message name="addEntryResponse">
+      <wsdl:part name="parameters" element="ns1:addEntryResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getDependentsRequest">
+      <wsdl:part name="parameters" element="ns1:getDependents"/>
+   </wsdl:message>
+   <wsdl:message name="getDependentsResponse">
+      <wsdl:part name="parameters" element="ns1:getDependentsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="deleteEntryRequest">
+      <wsdl:part name="parameters" element="ns1:deleteEntry"/>
+   </wsdl:message>
+   <wsdl:message name="deleteEntryResponse">
+      <wsdl:part name="parameters" element="ns1:deleteEntryResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getEntryDataCountRequest">
+      <wsdl:part name="parameters" element="ns1:getEntryDataCount"/>
+   </wsdl:message>
+   <wsdl:message name="getEntryDataCountResponse">
+      <wsdl:part name="parameters" element="ns1:getEntryDataCountResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getEntryNamesRequest">
+      <wsdl:part name="parameters" element="ns1:getEntryNames"/>
+   </wsdl:message>
+   <wsdl:message name="getEntryNamesResponse">
+      <wsdl:part name="parameters" element="ns1:getEntryNamesResponse"/>
+   </wsdl:message>
+   <wsdl:message name="entryDataRequest">
+      <wsdl:part name="parameters" element="ns1:entryData"/>
+   </wsdl:message>
+   <wsdl:message name="entryDataResponse">
+      <wsdl:part name="parameters" element="ns1:entryDataResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getEntryRequest">
+      <wsdl:part name="parameters" element="ns1:getEntry"/>
+   </wsdl:message>
+   <wsdl:message name="getEntryResponse">
+      <wsdl:part name="parameters" element="ns1:getEntryResponse"/>
+   </wsdl:message>
+   <wsdl:message name="paginatedEntryDataRequest">
+      <wsdl:part name="parameters" element="ns1:paginatedEntryData"/>
+   </wsdl:message>
+   <wsdl:message name="paginatedEntryDataResponse">
+      <wsdl:part name="parameters" element="ns1:paginatedEntryDataResponse"/>
+   </wsdl:message>
+   <wsdl:message name="saveEntryRequest">
+      <wsdl:part name="parameters" element="ns1:saveEntry"/>
+   </wsdl:message>
+   <wsdl:message name="saveEntryResponse">
+      <wsdl:part name="parameters" element="ns1:saveEntryResponse"/>
+   </wsdl:message>
+   <wsdl:portType name="LocalEntryAdminPortType">
+      <wsdl:operation name="getEntryNamesString">
+         <wsdl:input message="tns:getEntryNamesStringRequest" wsaw:Action="urn:getEntryNamesString"/>
+         <wsdl:output message="tns:getEntryNamesStringResponse" wsaw:Action="urn:getEntryNamesStringResponse"/>
+         <wsdl:fault message="tns:LocalEntryAdminLocalEntryAdminException" name="LocalEntryAdminLocalEntryAdminException" wsaw:Action="urn:getEntryNamesStringLocalEntryAdminLocalEntryAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="addEntry">
+         <wsdl:input message="tns:addEntryRequest" wsaw:Action="urn:addEntry"/>
+         <wsdl:output message="tns:addEntryResponse" wsaw:Action="urn:addEntryResponse"/>
+         <wsdl:fault message="tns:LocalEntryAdminLocalEntryAdminException" name="LocalEntryAdminLocalEntryAdminException" wsaw:Action="urn:addEntryLocalEntryAdminLocalEntryAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getDependents">
+         <wsdl:input message="tns:getDependentsRequest" wsaw:Action="urn:getDependents"/>
+         <wsdl:output message="tns:getDependentsResponse" wsaw:Action="urn:getDependentsResponse"/>
+      </wsdl:operation>
+      <wsdl:operation name="deleteEntry">
+         <wsdl:input message="tns:deleteEntryRequest" wsaw:Action="urn:deleteEntry"/>
+         <wsdl:output message="tns:deleteEntryResponse" wsaw:Action="urn:deleteEntryResponse"/>
+         <wsdl:fault message="tns:LocalEntryAdminLocalEntryAdminException" name="LocalEntryAdminLocalEntryAdminException" wsaw:Action="urn:deleteEntryLocalEntryAdminLocalEntryAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getEntryDataCount">
+         <wsdl:input message="tns:getEntryDataCountRequest" wsaw:Action="urn:getEntryDataCount"/>
+         <wsdl:output message="tns:getEntryDataCountResponse" wsaw:Action="urn:getEntryDataCountResponse"/>
+         <wsdl:fault message="tns:LocalEntryAdminLocalEntryAdminException" name="LocalEntryAdminLocalEntryAdminException" wsaw:Action="urn:getEntryDataCountLocalEntryAdminLocalEntryAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getEntryNames">
+         <wsdl:input message="tns:getEntryNamesRequest" wsaw:Action="urn:getEntryNames"/>
+         <wsdl:output message="tns:getEntryNamesResponse" wsaw:Action="urn:getEntryNamesResponse"/>
+         <wsdl:fault message="tns:LocalEntryAdminLocalEntryAdminException" name="LocalEntryAdminLocalEntryAdminException" wsaw:Action="urn:getEntryNamesLocalEntryAdminLocalEntryAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="entryData">
+         <wsdl:input message="tns:entryDataRequest" wsaw:Action="urn:entryData"/>
+         <wsdl:output message="tns:entryDataResponse" wsaw:Action="urn:entryDataResponse"/>
+         <wsdl:fault message="tns:LocalEntryAdminLocalEntryAdminException" name="LocalEntryAdminLocalEntryAdminException" wsaw:Action="urn:entryDataLocalEntryAdminLocalEntryAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getEntry">
+         <wsdl:input message="tns:getEntryRequest" wsaw:Action="urn:getEntry"/>
+         <wsdl:output message="tns:getEntryResponse" wsaw:Action="urn:getEntryResponse"/>
+         <wsdl:fault message="tns:LocalEntryAdminLocalEntryAdminException" name="LocalEntryAdminLocalEntryAdminException" wsaw:Action="urn:getEntryLocalEntryAdminLocalEntryAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="paginatedEntryData">
+         <wsdl:input message="tns:paginatedEntryDataRequest" wsaw:Action="urn:paginatedEntryData"/>
+         <wsdl:output message="tns:paginatedEntryDataResponse" wsaw:Action="urn:paginatedEntryDataResponse"/>
+         <wsdl:fault message="tns:LocalEntryAdminLocalEntryAdminException" name="LocalEntryAdminLocalEntryAdminException" wsaw:Action="urn:paginatedEntryDataLocalEntryAdminLocalEntryAdminException"/>
+      </wsdl:operation>
+      <wsdl:operation name="saveEntry">
+         <wsdl:input message="tns:saveEntryRequest" wsaw:Action="urn:saveEntry"/>
+         <wsdl:output message="tns:saveEntryResponse" wsaw:Action="urn:saveEntryResponse"/>
+         <wsdl:fault message="tns:LocalEntryAdminLocalEntryAdminException" name="LocalEntryAdminLocalEntryAdminException" wsaw:Action="urn:saveEntryLocalEntryAdminLocalEntryAdminException"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="LocalEntryAdminSoap11Binding" type="tns:LocalEntryAdminPortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getEntryNamesString">
+         <soap:operation soapAction="urn:getEntryNamesString" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addEntry">
+         <soap:operation soapAction="urn:addEntry" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getDependents">
+         <soap:operation soapAction="urn:getDependents" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteEntry">
+         <soap:operation soapAction="urn:deleteEntry" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getEntryDataCount">
+         <soap:operation soapAction="urn:getEntryDataCount" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getEntryNames">
+         <soap:operation soapAction="urn:getEntryNames" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="entryData">
+         <soap:operation soapAction="urn:entryData" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getEntry">
+         <soap:operation soapAction="urn:getEntry" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="paginatedEntryData">
+         <soap:operation soapAction="urn:paginatedEntryData" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="saveEntry">
+         <soap:operation soapAction="urn:saveEntry" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="LocalEntryAdminSoap12Binding" type="tns:LocalEntryAdminPortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="getEntryNamesString">
+         <soap12:operation soapAction="urn:getEntryNamesString" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap12:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addEntry">
+         <soap12:operation soapAction="urn:addEntry" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap12:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getDependents">
+         <soap12:operation soapAction="urn:getDependents" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteEntry">
+         <soap12:operation soapAction="urn:deleteEntry" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap12:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getEntryDataCount">
+         <soap12:operation soapAction="urn:getEntryDataCount" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap12:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getEntryNames">
+         <soap12:operation soapAction="urn:getEntryNames" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap12:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="entryData">
+         <soap12:operation soapAction="urn:entryData" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap12:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getEntry">
+         <soap12:operation soapAction="urn:getEntry" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap12:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="paginatedEntryData">
+         <soap12:operation soapAction="urn:paginatedEntryData" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap12:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="saveEntry">
+         <soap12:operation soapAction="urn:saveEntry" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="LocalEntryAdminLocalEntryAdminException">
+            <soap12:fault use="literal" name="LocalEntryAdminLocalEntryAdminException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="LocalEntryAdminHttpBinding" type="tns:LocalEntryAdminPortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="getEntryNamesString">
+         <http:operation location="getEntryNamesString"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="addEntry">
+         <http:operation location="addEntry"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getDependents">
+         <http:operation location="getDependents"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteEntry">
+         <http:operation location="deleteEntry"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getEntryDataCount">
+         <http:operation location="getEntryDataCount"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getEntryNames">
+         <http:operation location="getEntryNames"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="entryData">
+         <http:operation location="entryData"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getEntry">
+         <http:operation location="getEntry"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="paginatedEntryData">
+         <http:operation location="paginatedEntryData"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="saveEntry">
+         <http:operation location="saveEntry"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="LocalEntryAdmin">
+      <wsdl:port name="LocalEntryAdminHttpsSoap11Endpoint" binding="tns:LocalEntryAdminSoap11Binding">
+         <soap:address location="https://10.16.118.52:9443/services/LocalEntryAdmin.LocalEntryAdminHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="LocalEntryAdminHttpsSoap12Endpoint" binding="tns:LocalEntryAdminSoap12Binding">
+         <soap12:address location="https://10.16.118.52:9443/services/LocalEntryAdmin.LocalEntryAdminHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="LocalEntryAdminHttpsEndpoint" binding="tns:LocalEntryAdminHttpBinding">
+         <http:address location="https://10.16.118.52:9443/services/LocalEntryAdmin.LocalEntryAdminHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

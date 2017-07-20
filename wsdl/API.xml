@@ -1,0 +1,475 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://services.add.api.governance.carbon.wso2.org" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns2="http://services.update.api.governance.carbon.wso2.org" xmlns:ns1="http://services.get.api.governance.carbon.wso2.org" xmlns:ns4="http://services.get.api.artifactids.governance.carbon.wso2.org" xmlns:ns3="http://services.delete.api.governance.carbon.wso2.org" xmlns:ns6="http://api.registry.carbon.wso2.org/xsd" xmlns:ns5="http://services.get.api.dependencies.governance.carbon.wso2.org" xmlns:ns8="http://exceptions.core.registry.carbon.wso2.org/xsd" xmlns:ns7="http://exception.api.governance.carbon.wso2.org/xsd" xmlns:tns="http://ws.apache.org/axis2" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://ws.apache.org/axis2">
+   <wsdl:types>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.add.api.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="addAPIServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addAPI">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="info" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="addAPIResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.api.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getAPIServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAPI">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAPIResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.update.api.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="updateAPIServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="updateAPI">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="updatedInfo" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="updateAPIResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.delete.api.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="deleteAPIServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteAPI">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="deleteAPIResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.api.artifactids.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getAPIArtifactIDsServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAPIArtifactIDs">
+            <xs:complexType>
+               <xs:sequence/>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAPIArtifactIDsResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2234="http://exception.api.governance.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://services.get.api.dependencies.governance.carbon.wso2.org">
+         <xs:import namespace="http://exception.api.governance.carbon.wso2.org/xsd"/>
+         <xs:element name="getAPIDependenciesServiceGovernanceException">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="GovernanceException" nillable="true" type="ax2234:GovernanceException"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAPIDependencies">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element minOccurs="0" name="artifactId" nillable="true" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getAPIDependenciesResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://api.registry.carbon.wso2.org/xsd">
+         <xs:complexType name="RegistryException">
+            <xs:sequence/>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2233="http://exceptions.core.registry.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exception.api.governance.carbon.wso2.org/xsd">
+         <xs:import namespace="http://exceptions.core.registry.carbon.wso2.org/xsd"/>
+         <xs:complexType name="GovernanceException">
+            <xs:complexContent>
+               <xs:extension base="ns8:RegistryException">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax2232="http://api.registry.carbon.wso2.org/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exceptions.core.registry.carbon.wso2.org/xsd">
+         <xs:import namespace="http://api.registry.carbon.wso2.org/xsd"/>
+         <xs:complexType name="RegistryException">
+            <xs:complexContent>
+               <xs:extension base="ns6:RegistryException">
+                  <xs:sequence/>
+               </xs:extension>
+            </xs:complexContent>
+         </xs:complexType>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="updateAPIRequest">
+      <wsdl:part name="parameters" element="ns2:updateAPI"/>
+   </wsdl:message>
+   <wsdl:message name="updateAPIResponse">
+      <wsdl:part name="parameters" element="ns2:updateAPIResponse"/>
+   </wsdl:message>
+   <wsdl:message name="updateAPIServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns2:updateAPIServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="deleteAPIRequest">
+      <wsdl:part name="parameters" element="ns3:deleteAPI"/>
+   </wsdl:message>
+   <wsdl:message name="deleteAPIResponse">
+      <wsdl:part name="parameters" element="ns3:deleteAPIResponse"/>
+   </wsdl:message>
+   <wsdl:message name="deleteAPIServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns3:deleteAPIServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getAPIArtifactIDsRequest">
+      <wsdl:part name="parameters" element="ns4:getAPIArtifactIDs"/>
+   </wsdl:message>
+   <wsdl:message name="getAPIArtifactIDsResponse">
+      <wsdl:part name="parameters" element="ns4:getAPIArtifactIDsResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getAPIArtifactIDsServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns4:getAPIArtifactIDsServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="addAPIRequest">
+      <wsdl:part name="parameters" element="ns0:addAPI"/>
+   </wsdl:message>
+   <wsdl:message name="addAPIResponse">
+      <wsdl:part name="parameters" element="ns0:addAPIResponse"/>
+   </wsdl:message>
+   <wsdl:message name="addAPIServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns0:addAPIServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getAPIRequest">
+      <wsdl:part name="parameters" element="ns1:getAPI"/>
+   </wsdl:message>
+   <wsdl:message name="getAPIResponse">
+      <wsdl:part name="parameters" element="ns1:getAPIResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getAPIServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns1:getAPIServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:message name="getAPIDependenciesRequest">
+      <wsdl:part name="parameters" element="ns5:getAPIDependencies"/>
+   </wsdl:message>
+   <wsdl:message name="getAPIDependenciesResponse">
+      <wsdl:part name="parameters" element="ns5:getAPIDependenciesResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getAPIDependenciesServiceGovernanceException">
+      <wsdl:part name="parameters" element="ns5:getAPIDependenciesServiceGovernanceException"/>
+   </wsdl:message>
+   <wsdl:portType name="APIPortType">
+      <wsdl:operation name="updateAPI">
+         <wsdl:input message="tns:updateAPIRequest" wsaw:Action="urn:updateAPI"/>
+         <wsdl:output message="tns:updateAPIResponse" wsaw:Action="urn:updateAPIResponse"/>
+         <wsdl:fault message="tns:updateAPIServiceGovernanceException" name="updateAPIServiceGovernanceException" wsaw:Action="urn:updateAPIupdateAPIServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="deleteAPI">
+         <wsdl:input message="tns:deleteAPIRequest" wsaw:Action="urn:deleteAPI"/>
+         <wsdl:output message="tns:deleteAPIResponse" wsaw:Action="urn:deleteAPIResponse"/>
+         <wsdl:fault message="tns:deleteAPIServiceGovernanceException" name="deleteAPIServiceGovernanceException" wsaw:Action="urn:deleteAPIdeleteAPIServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getAPIArtifactIDs">
+         <wsdl:input message="tns:getAPIArtifactIDsRequest" wsaw:Action="urn:getAPIArtifactIDs"/>
+         <wsdl:output message="tns:getAPIArtifactIDsResponse" wsaw:Action="urn:getAPIArtifactIDsResponse"/>
+         <wsdl:fault message="tns:getAPIArtifactIDsServiceGovernanceException" name="getAPIArtifactIDsServiceGovernanceException" wsaw:Action="urn:getAPIArtifactIDsgetAPIArtifactIDsServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="addAPI">
+         <wsdl:input message="tns:addAPIRequest" wsaw:Action="urn:addAPI"/>
+         <wsdl:output message="tns:addAPIResponse" wsaw:Action="urn:addAPIResponse"/>
+         <wsdl:fault message="tns:addAPIServiceGovernanceException" name="addAPIServiceGovernanceException" wsaw:Action="urn:addAPIaddAPIServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getAPI">
+         <wsdl:input message="tns:getAPIRequest" wsaw:Action="urn:getAPI"/>
+         <wsdl:output message="tns:getAPIResponse" wsaw:Action="urn:getAPIResponse"/>
+         <wsdl:fault message="tns:getAPIServiceGovernanceException" name="getAPIServiceGovernanceException" wsaw:Action="urn:getAPIgetAPIServiceGovernanceException"/>
+      </wsdl:operation>
+      <wsdl:operation name="getAPIDependencies">
+         <wsdl:input message="tns:getAPIDependenciesRequest" wsaw:Action="urn:getAPIDependencies"/>
+         <wsdl:output message="tns:getAPIDependenciesResponse" wsaw:Action="urn:getAPIDependenciesResponse"/>
+         <wsdl:fault message="tns:getAPIDependenciesServiceGovernanceException" name="getAPIDependenciesServiceGovernanceException" wsaw:Action="urn:getAPIDependenciesgetAPIDependenciesServiceGovernanceException"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="APISoap11Binding" type="tns:APIPortType">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="updateAPI">
+         <soap:operation soapAction="urn:updateAPI" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="updateAPIServiceGovernanceException">
+            <soap:fault use="literal" name="updateAPIServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteAPI">
+         <soap:operation soapAction="urn:deleteAPI" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="deleteAPIServiceGovernanceException">
+            <soap:fault use="literal" name="deleteAPIServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAPIArtifactIDs">
+         <soap:operation soapAction="urn:getAPIArtifactIDs" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getAPIArtifactIDsServiceGovernanceException">
+            <soap:fault use="literal" name="getAPIArtifactIDsServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addAPI">
+         <soap:operation soapAction="urn:addAPI" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="addAPIServiceGovernanceException">
+            <soap:fault use="literal" name="addAPIServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAPI">
+         <soap:operation soapAction="urn:getAPI" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getAPIServiceGovernanceException">
+            <soap:fault use="literal" name="getAPIServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAPIDependencies">
+         <soap:operation soapAction="urn:getAPIDependencies" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getAPIDependenciesServiceGovernanceException">
+            <soap:fault use="literal" name="getAPIDependenciesServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="APISoap12Binding" type="tns:APIPortType">
+      <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+      <wsdl:operation name="updateAPI">
+         <soap12:operation soapAction="urn:updateAPI" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="updateAPIServiceGovernanceException">
+            <soap12:fault use="literal" name="updateAPIServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="deleteAPI">
+         <soap12:operation soapAction="urn:deleteAPI" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="deleteAPIServiceGovernanceException">
+            <soap12:fault use="literal" name="deleteAPIServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAPIArtifactIDs">
+         <soap12:operation soapAction="urn:getAPIArtifactIDs" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getAPIArtifactIDsServiceGovernanceException">
+            <soap12:fault use="literal" name="getAPIArtifactIDsServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="addAPI">
+         <soap12:operation soapAction="urn:addAPI" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="addAPIServiceGovernanceException">
+            <soap12:fault use="literal" name="addAPIServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAPI">
+         <soap12:operation soapAction="urn:getAPI" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getAPIServiceGovernanceException">
+            <soap12:fault use="literal" name="getAPIServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+      <wsdl:operation name="getAPIDependencies">
+         <soap12:operation soapAction="urn:getAPIDependencies" style="document"/>
+         <wsdl:input>
+            <soap12:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap12:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="getAPIDependenciesServiceGovernanceException">
+            <soap12:fault use="literal" name="getAPIDependenciesServiceGovernanceException"/>
+         </wsdl:fault>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="APIHttpBinding" type="tns:APIPortType">
+      <http:binding verb="POST"/>
+      <wsdl:operation name="updateAPI">
+         <http:operation location="updateAPI"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="deleteAPI">
+         <http:operation location="deleteAPI"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getAPIArtifactIDs">
+         <http:operation location="getAPIArtifactIDs"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="addAPI">
+         <http:operation location="addAPI"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getAPI">
+         <http:operation location="getAPI"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="getAPIDependencies">
+         <http:operation location="getAPIDependencies"/>
+         <wsdl:input>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:input>
+         <wsdl:output>
+            <mime:content type="text/xml" part="parameters"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="API">
+      <wsdl:port name="APIHttpsSoap11Endpoint" binding="tns:APISoap11Binding">
+         <soap:address location="https://10.16.118.52:9443/services/API.APIHttpsSoap11Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="APIHttpsSoap12Endpoint" binding="tns:APISoap12Binding">
+         <soap12:address location="https://10.16.118.52:9443/services/API.APIHttpsSoap12Endpoint"/>
+      </wsdl:port>
+      <wsdl:port name="APIHttpsEndpoint" binding="tns:APIHttpBinding">
+         <http:address location="https://10.16.118.52:9443/services/API.APIHttpsEndpoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>
