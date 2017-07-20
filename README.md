@@ -1,4 +1,4 @@
-#WSO2 Admin Services
+### WSO2 Admin Services
 WSO2 products are managed internally using SOAP Web services known as admin services. WSO2 products come with a management console UI, which communicates with these admin services to facilitate administration capabilities through the UI.
 A service in WSO2 products is defined by the following components:
 Service component: provides the actual service
