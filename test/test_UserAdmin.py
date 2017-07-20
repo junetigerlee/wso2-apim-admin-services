@@ -7,7 +7,11 @@ session = Session()
 session.verify = False
 session.auth = HTTPBasicAuth('admin', 'admin')
 
-client = Client('./wsdl/UserAdmin.xml',
+
+# client = Client('https://10.16.118.52:9443/services/UserAdmin?wsdl',
+#                 transport=Transport(session=session))
+
+client = Client('../wsdl/UserAdmin.xml',
                 transport=Transport(session=session))
 
 print client.service.listAllUsers('*', 100)
